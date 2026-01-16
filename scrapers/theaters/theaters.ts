@@ -22,4 +22,4 @@ export const TheBeacon: Theater = {
 }
 
 
-export const ALL_THEATERS = [SiffCenter, SiffUptown, SiffDowntown, TheBeacon]
+export const ALL_THEATERS = [TheBeacon, SiffUptown, SiffDowntown, SiffCenter]

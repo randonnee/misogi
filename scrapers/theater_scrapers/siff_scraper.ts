@@ -20,7 +20,7 @@ export class SiffScraper implements TheaterScraper {
     const dates: string[] = [];
     const now = new Date();
 
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 9; i++) {
       const date = new Date(now);
       date.setDate(now.getDate() + i);
 
