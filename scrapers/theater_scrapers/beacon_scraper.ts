@@ -4,31 +4,19 @@ import type { TheaterScraper } from "../models/theater_scraper";
 import * as cheerio from 'cheerio'
 import type { Element } from "domhandler";
 import { TheBeacon } from "../theaters/theaters";
-
-const calendar_mock_path = "scrapers/mocks/beacon_calendar.html"
-const calendar_mock = await Bun.file(calendar_mock_path).text()
+import { ScrapeClientImpl } from "../network/scrape-client";
+import { MockBeaconScrapeClient } from "../mocks/mock-beacon-scrape-client";
 
 export class BeaconScraper implements TheaterScraper {
-  getCalendar(): Effect.Effect<string, Error> {
-    // return Effect.succeed(calendar_mock)
+  private static readonly isMock = process.argv.includes('--mock');
+  private static readonly scrapeClient = BeaconScraper.isMock 
+    ? new MockBeaconScrapeClient() 
+    : new ScrapeClientImpl();
 
+  getCalendar(): Effect.Effect<string, Error> {
     const calendarUrl = "https://thebeacon.film/calendar";
 
-    return Effect.tryPromise({
-      try: async () => {
-        const response = await fetch(calendarUrl);
-        if (!response.ok) {
-          throw new Error(`Request failed: ${response.status} ${response.statusText}`);
-        }
-
-        return await response.text();
-      },
-      catch: (error): Error => {
-        return error instanceof Error
-          ? error
-          : new Error(String(error))
-      }
-    })
+    return BeaconScraper.scrapeClient.get(calendarUrl);
   }
 
   eventElementToShowtime(event: cheerio.Cheerio<Element>): Showtime | null {

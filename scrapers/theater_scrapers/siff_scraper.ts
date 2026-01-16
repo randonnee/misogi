@@ -1,16 +1,21 @@
 
 import { Effect, pipe } from "effect";
 import type { Showtime } from "../models/showtime";
-import type { Theater, TheaterId } from "../models/theater";
+import type { Theater } from "../models/theater";
 import type { TheaterScraper } from "../models/theater_scraper";
 import * as cheerio from 'cheerio'
 import type { Element } from "domhandler";
 import { SiffCenter, SiffDowntown, SiffUptown } from "../theaters/theaters";
+import { ScrapeClientImpl } from "../network/scrape-client";
+import { MockSiffScrapeClient } from "../mocks/mock-siff-scrape-client";
 
-const calendar_mock_path = "scrapers/mocks/siff_calendar.html"
-const calendar_mock = await Bun.file(calendar_mock_path).text()
 
 export class SiffScraper implements TheaterScraper {
+  private static readonly isMock = process.argv.includes('--mock');
+  private static readonly scrapeClient = SiffScraper.isMock
+    ? new MockSiffScrapeClient()
+    : new ScrapeClientImpl();
+
   getNextSevenDays(): string[] {
     const dates: string[] = [];
     const now = new Date();
@@ -65,29 +70,9 @@ export class SiffScraper implements TheaterScraper {
   }
 
   getCalendar(dateString: String): Effect.Effect<string, Error> {
-    // if (dateString == this.getNextSevenDays()[0]) {
-    //   return Effect.succeed(calendar_mock)
-    // } else {
-    //   return Effect.succeed("")
-    // }
-
     const calendarUrl = `https://www.siff.net/calendar?view=list&date=${dateString}`;
 
-    return Effect.tryPromise({
-      try: async () => {
-        const response = await fetch(calendarUrl);
-        if (!response.ok) {
-          throw new Error(`Request failed: ${response.status} ${response.statusText}`);
-        }
-
-        return await response.text();
-      },
-      catch: (error): Error => {
-        return error instanceof Error
-          ? error
-          : new Error(String(error))
-      }
-    })
+    return SiffScraper.scrapeClient.get(calendarUrl);
   }
 
   eventElementToShowtime($: cheerio.CheerioAPI, event: cheerio.Cheerio<Element>, dateString: string): Showtime[] | null {

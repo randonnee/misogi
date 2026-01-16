@@ -12,5 +12,9 @@
   "dependencies": {
     "cheerio": "^1.1.2",
     "effect": "^3.19.14"
+  },
+  "scripts": {
+    "start": "bun run index.ts",
+    "start:mock": "bun run index.ts --mock"
   }
 }

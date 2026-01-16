@@ -22,6 +22,7 @@ const server = Bun.serve({
     // Serve static files
     "/style.css": Bun.file("./style.css"),
     "/script.js": Bun.file("./script.js"),
+    "/favicon.svg": Bun.file("./favicon.svg"),
   },
 });
 
