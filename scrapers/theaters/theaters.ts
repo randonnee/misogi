@@ -20,6 +20,11 @@ export const TheBeacon: Theater = {
   url: "https://thebeacon.film",
   id: "beacon"
 }
+export const NWFilmForum: Theater = {
+  name: "NW Film Forum",
+  url: "https://nwfilmforum.org",
+  id: "nwff"
+}
 
 
-export const ALL_THEATERS = [TheBeacon, SiffUptown, SiffDowntown, SiffCenter]
+export const ALL_THEATERS = [TheBeacon, SiffUptown, SiffDowntown, SiffCenter, NWFilmForum]

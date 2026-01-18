@@ -1,4 +1,3 @@
-
 import { Effect, pipe } from "effect";
 import type { Showtime } from "../models/showtime";
 import type { Theater } from "../models/theater";
@@ -8,7 +7,6 @@ import type { Element } from "domhandler";
 import { SiffCenter, SiffDowntown, SiffUptown } from "../theaters/theaters";
 import { ScrapeClientImpl } from "../network/scrape-client";
 import { MockSiffScrapeClient } from "../mocks/mock-siff-scrape-client";
-
 
 export class SiffScraper implements TheaterScraper {
   private static readonly isMock = process.argv.includes('--mock');
@@ -127,31 +125,5 @@ export class SiffScraper implements TheaterScraper {
     ).pipe(
       Effect.map((arraysOfShowtimes) => arraysOfShowtimes.flat()),
     );
-  }
-
-  async generateIndexHtml(showtimes: Showtime[]): Promise<void> {
-    const template = await Bun.file("./index_template.html").text()
-    const $ = cheerio.load(template)
-
-    const moviesList = $("#movies-list")
-
-    showtimes.forEach(showtime => {
-      const date = new Date(showtime.datetime)
-      const dayName = date.toLocaleDateString('en-US', { weekday: 'short' })
-      const time = date.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })
-
-      const movieItem = `
-        <li class="movie-item">
-          <div class="movie-title"><a href="${showtime.movie.url}" target="_blank">${showtime.movie.title}</a></div>
-          <div class="movie-info">
-            <span class="movie-meta"></span>
-            <span class="movie-showtime">${showtime.theater.name} • ${dayName} ${time}</span>
-          </div>
-        </li>
-      `
-      moviesList.append(movieItem)
-    })
-
-    await Bun.write("./index.html", $.html())
   }
 }
