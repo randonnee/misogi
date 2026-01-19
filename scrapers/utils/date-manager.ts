@@ -1,4 +1,4 @@
-import { RUN_MODE } from "../network/scrape-client";
+import { RUN_MODE } from "../config/run-mode";
 
 export class DateManager {
   // Fixed date for mock mode to ensure consistent mock file lookups

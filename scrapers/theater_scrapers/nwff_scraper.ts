@@ -9,6 +9,7 @@ import { getScrapeClient } from "../network/scrape-client";
 
 export class NWFFScraper implements TheaterScraper {
   private static readonly scrapeClient = getScrapeClient();
+  private fetchedMovieUrls = new Set<string>();
 
   getUrls(): string[] {
     const dates: string[] = [];
@@ -31,12 +32,103 @@ export class NWFFScraper implements TheaterScraper {
     return { $, events }
   }
 
+  /**
+   * Extracts the movie image URL from a movie page HTML.
+   * Looks for the og:image meta tag or other image elements.
+   */
+  private extractImageUrl(html: string): string | null {
+    const $ = cheerio.load(html);
+
+    // Try og:image meta tag first
+    const ogImage = $('meta[property="og:image"]').attr("content");
+    if (ogImage) {
+      return ogImage;
+    }
+
+    // Fallback to twitter:image
+    const twitterImage = $('meta[name="twitter:image"]').attr("content");
+    if (twitterImage) {
+      return twitterImage;
+    }
+
+    return null;
+  }
+
+  /**
+   * Fetches a movie page if it hasn't been fetched before.
+   * Returns the image URL extracted from the page, or null if already fetched or no image found.
+   */
+  private fetchMoviePage(url: string): Effect.Effect<{ movieUrl: string; imageUrl: string | null }, Error> {
+    if (this.fetchedMovieUrls.has(url)) {
+      return Effect.succeed({ movieUrl: url, imageUrl: null });
+    }
+
+    this.fetchedMovieUrls.add(url);
+
+    return pipe(
+      NWFFScraper.scrapeClient.get(url),
+      Effect.flatMap((html): Effect.Effect<{ movieUrl: string; imageUrl: string | null }, Error> => {
+        const imageUrl = this.extractImageUrl(html);
+        if (imageUrl) {
+          return pipe(
+            NWFFScraper.scrapeClient.getImage(imageUrl),
+            Effect.map(() => ({ movieUrl: url, imageUrl: imageUrl as string | null }))
+          );
+        }
+        return Effect.succeed({ movieUrl: url, imageUrl: null });
+      })
+    );
+  }
+
+  /**
+   * Fetches all unique movie pages from the showtimes and updates showtimes with image URLs.
+   * Each URL is only fetched once.
+   */
+  private fetchAllMoviePagesAndUpdateShowtimes(showtimes: Showtime[]): Effect.Effect<Showtime[], Error> {
+    const uniqueUrls = [...new Set(
+      showtimes
+        .map(s => s.movie.url)
+        .filter((url): url is string => url !== undefined)
+    )];
+
+    const fetchEffects = uniqueUrls.map(url =>
+      this.fetchMoviePage(url)
+    );
+
+    return pipe(
+      Effect.all(fetchEffects, { concurrency: 1 }),
+      Effect.map((results) => {
+        // Build a map of movie URL -> image URL
+        const imageUrlMap = new Map<string, string>();
+        results.forEach(({ movieUrl, imageUrl }) => {
+          if (imageUrl) {
+            imageUrlMap.set(movieUrl, imageUrl);
+          }
+        });
+
+        // Update showtimes with image URLs
+        return showtimes.map(showtime => {
+          const movieUrl = showtime.movie.url;
+          if (movieUrl && imageUrlMap.has(movieUrl)) {
+            return {
+              ...showtime,
+              movie: {
+                ...showtime.movie,
+                imageUrl: imageUrlMap.get(movieUrl)
+              }
+            };
+          }
+          return showtime;
+        });
+      })
+    );
+  }
+
   eventElementToShowtime(_: cheerio.CheerioAPI, event: cheerio.Cheerio<Element>): Showtime | null {
     const link = event.find("a").first()
     const url = link.attr("href")
     const title = event.find('[itemprop="name"]').attr("content")?.trim();
     const time = event.find('[itemprop="startDate"]').attr("content")?.trim();
-    // console.log({ url, title, time })
     if (!time || !title) {
       return null
     }
@@ -63,6 +155,8 @@ export class NWFFScraper implements TheaterScraper {
       )
     ).pipe(
       Effect.map((arraysOfShowtimes) => arraysOfShowtimes.flat()),
+      Effect.map((showtimes) => showtimes.filter((s): s is Showtime => s !== null)),
+      Effect.flatMap((showtimes) => this.fetchAllMoviePagesAndUpdateShowtimes(showtimes)),
     );
   }
 }

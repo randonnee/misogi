@@ -10,6 +10,7 @@ import { DateManager } from "../utils/date-manager";
 
 export class SiffScraper implements TheaterScraper {
   private static readonly scrapeClient = getScrapeClient();
+  private fetchedMovieUrls = new Set<string>();
 
   getNextSevenDays(): Date[] {
     return DateManager.getNextNDays(7)
@@ -20,6 +21,102 @@ export class SiffScraper implements TheaterScraper {
     const calendarUrl = `https://www.siff.net/calendar?view=list&date=${dateString}`;
 
     return SiffScraper.scrapeClient.get(calendarUrl);
+  }
+
+  /**
+   * Extracts the movie image URL from a movie page HTML.
+   * Looks for the og:image meta tag or the main image in the page.
+   */
+  private extractImageUrl(html: string): string | null {
+    const $ = cheerio.load(html);
+
+    // Try og:image meta tag first
+    const ogImage = $('meta[property="og:image"]').attr("content");
+    if (ogImage) {
+      return ogImage;
+    }
+
+    // Fallback to the main image in the page
+    const mainImage = $("p.img-wrap.full-width img").first().attr("src");
+    if (mainImage) {
+      // Make sure to return absolute URL
+      if (mainImage.startsWith("/")) {
+        return "https://www.siff.net" + mainImage;
+      }
+      return mainImage;
+    }
+
+    return null;
+  }
+
+  /**
+   * Fetches a movie page if it hasn't been fetched before.
+   * Returns the image URL extracted from the page, or null if already fetched or no image found.
+   */
+  private fetchMoviePage(url: string): Effect.Effect<{ movieUrl: string; imageUrl: string | null }, Error> {
+    if (this.fetchedMovieUrls.has(url)) {
+      return Effect.succeed({ movieUrl: url, imageUrl: null });
+    }
+
+    this.fetchedMovieUrls.add(url);
+
+    return pipe(
+      SiffScraper.scrapeClient.get(url),
+      Effect.flatMap((html): Effect.Effect<{ movieUrl: string; imageUrl: string | null }, Error> => {
+        const imageUrl = this.extractImageUrl(html);
+        if (imageUrl) {
+          return pipe(
+            SiffScraper.scrapeClient.getImage(imageUrl),
+            Effect.map(() => ({ movieUrl: url, imageUrl: imageUrl as string | null }))
+          );
+        }
+        return Effect.succeed({ movieUrl: url, imageUrl: null });
+      })
+    );
+  }
+
+  /**
+   * Fetches all unique movie pages from the showtimes and updates showtimes with image URLs.
+   * Each URL is only fetched once.
+   */
+  private fetchAllMoviePagesAndUpdateShowtimes(showtimes: Showtime[]): Effect.Effect<Showtime[], Error> {
+    const uniqueUrls = [...new Set(
+      showtimes
+        .map(s => s.movie.url)
+        .filter((url): url is string => url !== undefined)
+    )];
+
+    const fetchEffects = uniqueUrls.map(url =>
+      this.fetchMoviePage(url)
+    );
+
+    return pipe(
+      Effect.all(fetchEffects, { concurrency: 1 }),
+      Effect.map((results) => {
+        // Build a map of movie URL -> image URL
+        const imageUrlMap = new Map<string, string>();
+        results.forEach(({ movieUrl, imageUrl }) => {
+          if (imageUrl) {
+            imageUrlMap.set(movieUrl, imageUrl);
+          }
+        });
+
+        // Update showtimes with image URLs
+        return showtimes.map(showtime => {
+          const movieUrl = showtime.movie.url;
+          if (movieUrl && imageUrlMap.has(movieUrl)) {
+            return {
+              ...showtime,
+              movie: {
+                ...showtime.movie,
+                imageUrl: imageUrlMap.get(movieUrl)
+              }
+            };
+          }
+          return showtime;
+        });
+      })
+    );
   }
 
   eventElementToShowtime($: cheerio.CheerioAPI, event: cheerio.Cheerio<Element>, date: Date): Showtime[] | null {
@@ -73,6 +170,7 @@ export class SiffScraper implements TheaterScraper {
       )
     ).pipe(
       Effect.map((arraysOfShowtimes) => arraysOfShowtimes.flat()),
+      Effect.flatMap((showtimes) => this.fetchAllMoviePagesAndUpdateShowtimes(showtimes)),
     );
   }
 }

@@ -355,11 +355,24 @@ main {
   color: var(--accent-purple);
 }
 
+.movie-card-body {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.movie-poster {
+  width: 200px;
+  height: 112px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .movie-theaters {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding: 1rem;
+  flex: 1;
 }
 
 .theater-showtimes {

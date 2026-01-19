@@ -1,21 +1,13 @@
 import { Effect } from "effect";
-import { getMockFilePath, MOCK_HTML_DIR } from "../mocks/mock-utils";
+import { getMockHtmlFilePath, getMockImageFilePath, getOutImageFilePath } from "../mocks/mock-utils";
 import { MockScrapeClient } from "../mocks/mock-scrape-client";
+import { RUN_MODE } from "../config/run-mode";
 
 export interface ScrapeClient {
   get(url: string): Effect.Effect<string, Error>;
+  getImage(url: string): Effect.Effect<Uint8Array, Error>;
 }
 
-export type RunMode = "mock" | "prod" | "update_mocks";
-
-export const RUN_MODE: RunMode = (process.env.RUN_MODE as RunMode) || "mock";
-
-/**
- * Returns the appropriate ScrapeClient based on RUN_MODE.
- * - "mock": Uses MockScrapeClient (reads from mocks/html folder)
- * - "prod": Uses ScrapeClientImpl (real HTTP requests)
- * - "update_mocks": Uses ScrapeClientImpl and saves responses to mocks/html folder
- */
 export function getScrapeClient(): ScrapeClient {
   if (RUN_MODE === "mock") {
     console.log("Using MockScrapeClient (RUN_MODE=mock)");
@@ -53,10 +45,24 @@ export class ScrapeClientImpl implements ScrapeClient {
   }
 
   private async saveMock(url: string, html: string): Promise<void> {
-    const filePath = getMockFilePath(url);
+    const filePath = getMockHtmlFilePath(url);
 
     await Bun.write(filePath, html);
     console.log(`Saved mock for ${url} to ${filePath}`);
+  }
+
+  private async saveImageMock(url: string, data: Uint8Array): Promise<void> {
+    const filePath = getMockImageFilePath(url);
+
+    await Bun.write(filePath, data);
+    console.log(`Saved image mock for ${url} to ${filePath}`);
+  }
+
+  private async saveOutImage(url: string, data: Uint8Array): Promise<void> {
+    const filePath = getOutImageFilePath(url);
+
+    await Bun.write(filePath, data);
+    console.log(`Saved output image for ${url} to ${filePath}`);
   }
 
   get(url: string): Effect.Effect<string, Error> {
@@ -81,6 +87,41 @@ export class ScrapeClientImpl implements ScrapeClient {
         }
 
         return html;
+      },
+      catch: (error): Error => {
+        return error instanceof Error
+          ? error
+          : new Error(String(error));
+      },
+    });
+  }
+
+  getImage(url: string): Effect.Effect<Uint8Array, Error> {
+    return Effect.tryPromise({
+      try: async () => {
+        await this.enforceDelay();
+
+        const response = await fetch(url, {
+          headers: {
+            "User-Agent": ScrapeClientImpl.USER_AGENT,
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error(`Request failed: ${response.status} ${response.statusText}`);
+        }
+
+        const buffer = await response.arrayBuffer();
+        const data = new Uint8Array(buffer);
+
+        if (RUN_MODE === "update_mocks") {
+          await this.saveImageMock(url, data);
+        }
+
+        // Always save to out/images for serving
+        await this.saveOutImage(url, data);
+
+        return data;
       },
       catch: (error): Error => {
         return error instanceof Error

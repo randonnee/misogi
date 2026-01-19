@@ -1,6 +1,7 @@
 import type { Record } from "effect"
 import type { Showtime } from "../scrapers/models/showtime"
 import { ALL_THEATERS } from "../scrapers/theaters/theaters"
+import { imageUrlToFilename } from "../scrapers/mocks/mock-utils"
 import * as cheerio from 'cheerio'
 
 export class SiteGenerator {
@@ -100,7 +101,7 @@ export class SiteGenerator {
       const movieTitle = parts[0]
       const theaterId = parts[1]
       if (!movieTitle || !theaterId) return
-      
+
       const firstShowtime = showtimes[0]
       if (!firstShowtime) return
 
@@ -143,11 +144,18 @@ export class SiteGenerator {
         `
       }).join('')
 
+      const movieImageHtml = movie.imageUrl
+        ? `<img class="movie-poster" src="/images/${imageUrlToFilename(movie.imageUrl)}" alt="${movie.title}">`
+        : ''
+
       const movieCard = `
         <div class="movie-card">
           <div class="movie-card-title"><a href="${movie.url}" target="_blank">${movie.title}</a></div>
-          <div class="movie-theaters">
-            ${theaterItemsHtml}
+          <div class="movie-card-body">
+            ${movieImageHtml}
+            <div class="movie-theaters">
+              ${theaterItemsHtml}
+            </div>
           </div>
         </div>
       `
