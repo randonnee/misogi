@@ -5,75 +5,24 @@ import type { TheaterScraper } from "../models/theater_scraper";
 import * as cheerio from 'cheerio'
 import type { Element } from "domhandler";
 import { SiffCenter, SiffDowntown, SiffUptown } from "../theaters/theaters";
-import { ScrapeClientImpl } from "../network/scrape-client";
-import { MockSiffScrapeClient } from "../mocks/mock-siff-scrape-client";
+import { getScrapeClient } from "../network/scrape-client";
+import { DateManager } from "../utils/date-manager";
 
 export class SiffScraper implements TheaterScraper {
-  private static readonly isMock = process.argv.includes('--mock');
-  private static readonly scrapeClient = SiffScraper.isMock
-    ? new MockSiffScrapeClient()
-    : new ScrapeClientImpl();
+  private static readonly scrapeClient = getScrapeClient();
 
-  getNextSevenDays(): string[] {
-    const dates: string[] = [];
-    const now = new Date();
-
-    for (let i = 0; i < 9; i++) {
-      const date = new Date(now);
-      date.setDate(now.getDate() + i);
-
-      const pstDate = new Date(date.toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
-      const year = pstDate.getFullYear();
-      const month = String(pstDate.getMonth() + 1).padStart(2, '0');
-      const day = String(pstDate.getDate()).padStart(2, '0');
-
-      dates.push(`${year}-${month}-${day}`);
-    }
-
-    return dates;
+  getNextSevenDays(): Date[] {
+    return DateManager.getNextNDays(7)
   }
 
-  static parseDateTime(dateString: string, timeString: string): Date {
-    // Parse date components
-    const dateParts = dateString.split('-');
-    const year = Number(dateParts[0]);
-    const month = Number(dateParts[1]);
-    const day = Number(dateParts[2]);
-
-    // Parse time string (e.g., "7:45 PM")
-    const timeMatch = timeString.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
-    if (!timeMatch) {
-      throw new Error(`Invalid time format: ${timeString}`);
-    }
-
-    const [, hoursStr, minutesStr, periodStr] = timeMatch;
-    let hours = Number(hoursStr);
-    const minutes = Number(minutesStr);
-    const period = periodStr?.toUpperCase();
-
-    // Convert to 24-hour format
-    if (period === 'PM' && hours !== 12) {
-      hours += 12;
-    } else if (period === 'AM' && hours === 12) {
-      hours = 0;
-    }
-
-    // Create date in PST timezone
-    const date = new Date();
-    date.setFullYear(year, month - 1, day);
-    date.setHours(hours, minutes, 0, 0);
-
-    // Convert to PST by using the timezone
-    return new Date(date.toLocaleString("en-US", { timeZone: "America/Los_Angeles" }));
-  }
-
-  getCalendar(dateString: String): Effect.Effect<string, Error> {
+  getCalendar(date: Date): Effect.Effect<string, Error> {
+    const dateString = DateManager.getDateYYYYMMDD(date)
     const calendarUrl = `https://www.siff.net/calendar?view=list&date=${dateString}`;
 
     return SiffScraper.scrapeClient.get(calendarUrl);
   }
 
-  eventElementToShowtime($: cheerio.CheerioAPI, event: cheerio.Cheerio<Element>, dateString: string): Showtime[] | null {
+  eventElementToShowtime($: cheerio.CheerioAPI, event: cheerio.Cheerio<Element>, date: Date): Showtime[] | null {
     const link = event.find("h3 > a").first()
     const url = "https://siff.net" + link.attr("href")
     const title = link.text().trim();
@@ -100,13 +49,13 @@ export class SiffScraper implements TheaterScraper {
 
     const actual_times = times.find("div.button-group > a").map((_, el) => $(el).text()).get()
     return actual_times.map((time) => {
-      const date = SiffScraper.parseDateTime(dateString, time)
+      const dateTime = DateManager.parseDateTime(date, time)
       return {
         movie: {
           title: title,
           url: url,
         },
-        datetime: date,
+        datetime: dateTime,
         theater: theater!
       }
     })

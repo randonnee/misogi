@@ -14,7 +14,8 @@
     "effect": "^3.19.14"
   },
   "scripts": {
-    "start": "bun run index.ts",
-    "start:mock": "bun run index.ts --mock"
+    "start": "RUN_MODE=mock bun run index.ts",
+    "start:prod": "RUN_MODE=prod bun run index.ts",
+    "start:update-mocks": "RUN_MODE=update_mocks bun run index.ts"
   }
 }

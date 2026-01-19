@@ -4,14 +4,10 @@ import type { TheaterScraper } from "../models/theater_scraper";
 import * as cheerio from 'cheerio'
 import type { Element } from "domhandler";
 import { TheBeacon } from "../theaters/theaters";
-import { ScrapeClientImpl } from "../network/scrape-client";
-import { MockBeaconScrapeClient } from "../mocks/mock-beacon-scrape-client";
+import { getScrapeClient } from "../network/scrape-client";
 
 export class BeaconScraper implements TheaterScraper {
-  private static readonly isMock = process.argv.includes('--mock');
-  private static readonly scrapeClient = BeaconScraper.isMock 
-    ? new MockBeaconScrapeClient() 
-    : new ScrapeClientImpl();
+  private static readonly scrapeClient = getScrapeClient();
 
   getCalendar(): Effect.Effect<string, Error> {
     const calendarUrl = "https://thebeacon.film/calendar";

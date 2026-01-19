@@ -1,19 +1,14 @@
-
 import { Effect, pipe } from "effect";
 import type { Showtime } from "../models/showtime";
 import type { TheaterScraper } from "../models/theater_scraper";
 import * as cheerio from 'cheerio'
 import type { Element } from "domhandler";
 import { NWFilmForum } from "../theaters/theaters";
-import { ScrapeClientImpl } from "../network/scrape-client";
-import { MockNWFFClient } from "../mocks/mock-nwff-scrape-client";
+import { getScrapeClient } from "../network/scrape-client";
 
 
 export class NWFFScraper implements TheaterScraper {
-  private static readonly isMock = process.argv.includes('--mock');
-  private static readonly scrapeClient = NWFFScraper.isMock
-    ? new MockNWFFClient()
-    : new ScrapeClientImpl();
+  private static readonly scrapeClient = getScrapeClient();
 
   getUrls(): string[] {
     const dates: string[] = [];
@@ -41,7 +36,7 @@ export class NWFFScraper implements TheaterScraper {
     const url = link.attr("href")
     const title = event.find('[itemprop="name"]').attr("content")?.trim();
     const time = event.find('[itemprop="startDate"]').attr("content")?.trim();
-    console.log({ url, title, time })
+    // console.log({ url, title, time })
     if (!time || !title) {
       return null
     }

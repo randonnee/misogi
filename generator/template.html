@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Misogi Film Club</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Misogi Film Club</h1>
+      <nav class="view-modes">
+        <a class="view-mode active" href="#now-playing" data-view="now-playing">Now playing</a>
+        <a class="view-mode" href="#calendar" data-view="calendar">Calendar</a>
+        <a class="view-mode" href="#about" data-view="about">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Now Playing View -->
+      <section class="view active" id="now-playing-view">
+        <div class="movie-grid" id="movie-grid">
+          <!-- Movies will be populated here -->
+        </div>
+      </section>
+
+      <!-- Calendar View -->
+      <section class="view" id="calendar-view">
+        <div class="filter-section">
+          <div class="theater-filters">
+            <!-- Theater filters will be populated here -->
+          </div>
+        </div>
+        <div class="day-grid" id="day-grid">
+          <!-- Days and showtimes will be populated here -->
+        </div>
+      </section>
+
+      <!-- About View -->
+      <section class="view" id="about-view">
+        <div class="about-content">
+          <p>Misogi Film Club aggregates showtimes from independent theaters in Seattle.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

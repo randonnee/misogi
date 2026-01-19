@@ -6,8 +6,10 @@
 
 :root {
   --primary-color: #0a0a0a;
-  --secondary-color: #EA6C6D;
-  --accent-color: #9E75C7;
+  --accent-red: #EA6C6D;
+  --accent-green: #6CBF43;
+  --accent-purple: #9E75C7;
+  --accent-blue: #025BD6;
   --text-light: #666;
   --background: #F8F9FA;
   --surface: #ffffff;
@@ -30,15 +32,48 @@ body {
   text-align: center;
 }
 
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+}
+
+.view-modes {
+  display: flex;
+  /* gap: 0.25rem; */
+  align-items: stretch;
+}
+
+.view-mode {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
 /* Container */
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1.5rem 2rem;
+  padding: 1rem;
 }
 
 main {
   margin-top: 1rem;
+}
+
+/* View Sections */
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
 }
 
 /* Controls */
@@ -51,9 +86,11 @@ main {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  padding-top: 0.5rem;
 }
 
-.theater-filter {
+.theater-filter,
+.view-mode {
   font-size: var(--filter-item-font-size);
   background: transparent;
   border: none;
@@ -62,15 +99,22 @@ main {
   white-space: nowrap;
   position: relative;
   font-family: inherit;
+  text-decoration: none;
 }
 
-.theater-filter:hover {
+.theater-filter:hover,
+.view-mode:hover {
   color: var(--primary-color);
 }
 
 .theater-filter.active {
   color: var(--background);
-  background-color: #025BD6;
+  background-color: var(--accent-blue);
+}
+
+.view-mode.active {
+  color: var(--background);
+  background-color: var(--accent-purple)
 }
 
 /* Main Content */
@@ -120,7 +164,7 @@ main {
 }
 
 .film-title a:hover {
-  color: var(--accent-color);
+  color: var(--accent-purple);
 }
 
 .separator {
@@ -143,7 +187,7 @@ main {
 
 @media (max-width: 768px) {
   .container {
-    padding: 1rem 1.5rem;
+    padding: 1rem;
   }
 
   .divider {
@@ -170,6 +214,28 @@ main {
   .day-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .view-modes {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .view-mode {
+    padding: 0.5rem 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header h1 {
+    display: none
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
@@ -203,7 +269,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-top: 1rem;
 }
 
 .day-item {
@@ -214,7 +280,7 @@ main {
 
 .day-header {
   font-size: var(--date-font-size);
-  font-weight: 600;
+  font-weight: 500;
   color: var(--primary-color);
   text-align: center;
   border-bottom: 2px solid var(--border);
@@ -247,7 +313,7 @@ main {
 }
 
 .movie-item a:hover {
-  color: var(--secondary-color);
+  color: var(--accent-red);
 }
 
 .movie-times {
@@ -257,29 +323,75 @@ main {
 }
 
 
-/* Print Styles */
-@media print {
-  .controls {
-    display: none;
-  }
+/* Movie Grid (Now Playing page) */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
 
-  .showtime {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid var(--border);
-  }
+.movie-card {
+  text-align: center;
+  background: var(--surface);
+  border: 2px solid var(--border);
+}
 
-  .showtime:hover {
-    transform: none;
-  }
+.movie-card-title {
+  font-size: var(--movie-title-font-size);
+  font-weight: 600;
+  color: var(--primary-color);
+  text-align: center;
+  border-bottom: 2px solid var(--border);
+  padding: 0.25rem;
+}
 
-  .movie-item {
-    break-inside: avoid;
-    box-shadow: none;
-    border: 1px solid var(--border);
-  }
+.movie-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  .movie-item:hover {
-    transform: none;
-  }
+.movie-card-title a:hover {
+  color: var(--accent-purple);
+}
+
+.movie-theaters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.theater-showtimes {
+  text-align: left;
+}
+
+.theater-name {
+  font-size: var(--movie-times-font-size);
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.theater-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.theater-name a:hover {
+  color: var(--accent-red);
+}
+
+.showtime-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.showtime-date-row {
+  display: flex;
+  gap: 0.5rem;
+  font-size: var(--movie-times-font-size);
+  color: var(--text-light);
+  justify-content: space-between;
 }

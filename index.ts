@@ -13,7 +13,7 @@ const getAllShowtimes = Effect.all([beaconScraper.getShowtimes(), siffScraper.ge
 Effect.runPromise(getAllShowtimes).then((theaterShowtimeResult) => {
   const showtimes = theaterShowtimeResult.filter(Either.isRight).flatMap(result => result.right)
   console.log("flattened length: ", showtimes.length)
-  SiteGenerator.generateIndexHtml(showtimes)
+  SiteGenerator.generateSite(showtimes)
 })
 
 const server = Bun.serve({
