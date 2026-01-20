@@ -4,6 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Find showtimes at Seattle's independent movie theaters. Browse now playing films and upcoming screenings at indie cinemas across Seattle.">
+  <meta name="keywords"
+    content="Seattle indie theaters, independent cinema Seattle, Seattle movie showtimes, arthouse films Seattle, indie movies Seattle">
+  <meta name="author" content="SeattleIndie.club">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://seattleindie.club/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://seattleindie.club/">
+  <meta property="og:title" content="SeattleIndie.club - Seattle Independent Theater Showtimes">
+  <meta property="og:description"
+    content="Find showtimes at Seattle's independent movie theaters. Browse now playing films and upcoming screenings at indie cinemas.">
+  <meta property="og:site_name" content="SeattleIndie.club">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SeattleIndie.club",
+    "url": "https://seattleindie.club/",
+    "description": "Aggregates showtimes from independent movie theaters in Seattle"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -11,7 +40,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>SeattleIndie.club</title>
+  <title>SeattleIndie.club - Seattle Independent Movie Theater Showtimes</title>
 </head>
 
 <body>
@@ -27,14 +56,14 @@
 
     <main>
       <!-- Now Playing View -->
-      <section class="view active" id="now-playing-view">
-        <div class="movie-grid" id="movie-grid">
+      <section class="view active" id="now-playing-view" aria-label="Now Playing Movies">
+        <div class="movie-grid" id="movie-grid" role="list">
           <!-- Movies will be populated here -->
         </div>
       </section>
 
       <!-- Calendar View -->
-      <section class="view" id="calendar-view">
+      <section class="view" id="calendar-view" aria-label="Showtime Calendar">
         <div class="filter-section">
           <div class="theater-filters">
             <!-- Theater filters will be populated here -->
@@ -47,9 +76,9 @@
 
       <!-- About View -->
       <section class="view" id="about-view">
-        <div class="about-content">
+        <article class="about-content">
           <p>SeattleIndie.club aggregates showtimes from independent theaters in Seattle.</p>
-        </div>
+        </article>
       </section>
     </main>
   </div>
