@@ -5,6 +5,7 @@ import * as cheerio from 'cheerio'
 import type { Element } from "domhandler";
 import { NWFilmForum } from "../theaters/theaters";
 import { getScrapeClient } from "../network/scrape-client";
+import { DateManager } from "../utils/date-manager";
 
 
 export class NWFFScraper implements TheaterScraper {
@@ -13,7 +14,7 @@ export class NWFFScraper implements TheaterScraper {
 
   getUrls(): string[] {
     const dates: string[] = [];
-    const now = new Date();
+    const now = DateManager.getNow()
 
     for (let i = 0; i < 4; i++) {
       const date = new Date(now);
@@ -145,6 +146,7 @@ export class NWFFScraper implements TheaterScraper {
 
   getShowtimes(): Effect.Effect<Showtime[], Error> {
     const urls = this.getUrls()
+    console.log(urls)
 
     return Effect.forEach(urls, (url) =>
       pipe(
