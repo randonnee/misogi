@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Error - Misogi Film Club</title>
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    :root {
+      --primary-color: #0a0a0a;
+      --accent-red: #EA6C6D;
+      --text-light: #666;
+      --background: #F8F9FA;
+      --surface: #ffffff;
+      --border: #e5e5e5;
+    }
+    body {
+      font-family: "JetBrains Mono", monospace, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: var(--primary-color);
+      background: var(--background);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem;
+      width: 100%;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+    header h1 {
+      display: flex;
+      align-items: center;
+    }
+    main {
+      margin-top: 1rem;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .error-card {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      max-width: 500px;
+    }
+    .error-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent-red);
+      margin-bottom: 1rem;
+    }
+    .error-message {
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    .error-home {
+      margin-top: 1.5rem;
+    }
+    .error-home a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .error-home a:hover {
+      color: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <main>
+      <div class="error-card">
+        <div class="error-title">Oops, Something went wrong</div>
+        <div class="error-home"><a href="/">← Back to home</a></div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

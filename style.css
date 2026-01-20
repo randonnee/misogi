@@ -178,6 +178,14 @@ main {
   text-align: center;
 }
 
+/* Movie Grid (Now Playing page) */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
 /* Responsive Design */
 @media (max-width: 1200px) {
   .showtimes {
@@ -234,7 +242,7 @@ main {
   }
 
   .movie-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(450, 1fr));
     gap: 1rem;
   }
 }
@@ -323,12 +331,12 @@ main {
 }
 
 
-/* Movie Grid (Now Playing page) */
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-  gap: 1rem;
-  margin-bottom: 3rem;
+.showtime-date-row {
+  display: flex;
+  gap: 0.5rem;
+  font-size: var(--movie-times-font-size);
+  color: var(--text-light);
+  justify-content: space-between;
 }
 
 .movie-card {
@@ -399,12 +407,4 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
-}
-
-.showtime-date-row {
-  display: flex;
-  gap: 0.5rem;
-  font-size: var(--movie-times-font-size);
-  color: var(--text-light);
-  justify-content: space-between;
 }
