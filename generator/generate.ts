@@ -1,11 +1,24 @@
 import { Effect, Either } from "effect"
-import { BeaconScraper } from "../scrapers/theater_scrapers/beacon_scraper"
-import { SiffScraper } from "../scrapers/theater_scrapers/siff_scraper"
-import { SiteGenerator } from "./generator"
-import { NWFFScraper } from "../scrapers/theater_scrapers/nwff_scraper"
-import type { TheaterScraper } from "../scrapers/models/theater_scraper"
+import * as cheerio from 'cheerio'
+import type { Showtime } from "../scrapers/models/showtime"
+import { getAllScrapers, getScrapersForTheaters } from "./scraper_registry"
+import {
+  sortShowtimesChronologically,
+  filterShowtimesFromToday,
+  filterShowtimesForNextDays,
+  groupShowtimesByDate,
+  groupShowtimesByMovieAndTheater
+} from "./showtime_utils"
+import {
+  generateTheaterFilters,
+  generateCalendar,
+  generateMovieGrid
+} from "./html_generators"
 
-// Parse --theaters argument (comma-separated list of theater IDs)
+const TEMPLATE_PATH = "./generator/template.html"
+const OUTPUT_PATH = "./out/index.html"
+const NOW_PLAYING_DAYS = 7
+
 function parseTheatersArg(): string[] | null {
   const theatersArgIndex = process.argv.findIndex(arg => arg === "--theaters")
   if (theatersArgIndex === -1 || theatersArgIndex === process.argv.length - 1) {
@@ -18,47 +31,51 @@ function parseTheatersArg(): string[] | null {
   return theatersValue.split(",").map(t => t.trim().toLowerCase())
 }
 
-// Scraper registry mapping theater IDs to their scrapers
-// Note: SIFF scraper handles multiple venues (siff-uptown, siff-downtown, siff-center)
-const SCRAPER_REGISTRY: { theaterIds: string[], scraper: TheaterScraper }[] = [
-  { theaterIds: ["beacon"], scraper: new BeaconScraper() },
-  { theaterIds: ["siff"], scraper: new SiffScraper() },
-  { theaterIds: ["nwff"], scraper: new NWFFScraper() },
-]
+async function generateSite(showtimes: Showtime[]): Promise<void> {
+  const template = await Bun.file(TEMPLATE_PATH).text()
+  const $ = cheerio.load(template)
 
-function getScrapersForTheaters(theaterIds: string[] | null): TheaterScraper[] {
-  if (theaterIds === null) {
-    // No filter specified, return all scrapers
-    return SCRAPER_REGISTRY.map(entry => entry.scraper)
-  }
+  const sortedShowtimes = sortShowtimesChronologically(showtimes)
 
-  const selectedScrapers = new Set<TheaterScraper>()
-  for (const entry of SCRAPER_REGISTRY) {
-    if (entry.theaterIds.some(id => theaterIds.includes(id))) {
-      selectedScrapers.add(entry.scraper)
-    }
-  }
+  // Generate theater filters for calendar view
+  generateTheaterFilters($)
 
-  if (selectedScrapers.size === 0) {
-    const validIds = SCRAPER_REGISTRY.flatMap(entry => entry.theaterIds)
-    console.warn(`Warning: No valid theater IDs found. Valid IDs are: ${validIds.join(", ")}`)
-    return SCRAPER_REGISTRY.map(entry => entry.scraper)
-  }
+  // Generate calendar view content (from today onwards)
+  const upcomingShowtimes = filterShowtimesFromToday(sortedShowtimes)
+  const showtimesByDay = groupShowtimesByDate(upcomingShowtimes)
+  generateCalendar($, showtimesByDay)
 
-  return [...selectedScrapers]
+  // Generate now-playing view content (only next N days)
+  const nowPlayingShowtimes = filterShowtimesForNextDays(sortedShowtimes, NOW_PLAYING_DAYS)
+  const showtimesByMovieAndTheater = groupShowtimesByMovieAndTheater(nowPlayingShowtimes)
+  generateMovieGrid($, showtimesByMovieAndTheater)
+
+  await Bun.write(OUTPUT_PATH, $.html())
 }
 
-const requestedTheaters = parseTheatersArg()
-const scrapers = getScrapersForTheaters(requestedTheaters)
+async function main(): Promise<void> {
+  const requestedTheaters = parseTheatersArg()
 
-if (requestedTheaters) {
-  console.log(`Running scrapers for theaters: ${requestedTheaters.join(", ")}`)
+  const scrapers = requestedTheaters
+    ? getScrapersForTheaters(requestedTheaters)
+    : getAllScrapers()
+
+  if (requestedTheaters) {
+    console.log(`Running scrapers for theaters: ${requestedTheaters.join(", ")}`)
+  }
+
+  const getAllShowtimes = Effect.all(
+    scrapers.map(s => s.getShowtimes()),
+    { mode: "either" }
+  )
+
+  const theaterShowtimeResult = await Effect.runPromise(getAllShowtimes)
+  const showtimes = theaterShowtimeResult
+    .filter(Either.isRight)
+    .flatMap(result => result.right)
+
+  console.log(`Total showtimes: ${showtimes.length}`)
+  await generateSite(showtimes)
 }
 
-const getAllShowtimes = Effect.all(scrapers.map(s => s.getShowtimes()), { mode: "either" })
-
-Effect.runPromise(getAllShowtimes).then((theaterShowtimeResult) => {
-  const showtimes = theaterShowtimeResult.filter(Either.isRight).flatMap(result => result.right)
-  console.log("flattened length: ", showtimes.length)
-  SiteGenerator.generateSite(showtimes)
-})
+main()
