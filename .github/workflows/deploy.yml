@@ -35,9 +35,7 @@ jobs:
 
       - name: Copy static assets to output
         run: |
-          cp style.css out/
-          cp script.js out/
-          cp favicon.svg out/
+          cp -r static/* out/
           # Copy images directory if it exists
           if [ -d "images" ]; then
             cp -r images out/
