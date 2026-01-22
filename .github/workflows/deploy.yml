@@ -30,6 +30,12 @@ jobs:
       - name: Install dependencies
         run: bun install
 
+      - name: Restore image cache
+        uses: actions/cache@v4
+        with:
+          path: out/images
+          key: movie-images-cache
+
       - name: Generate site
         run: bun run generate:prod
 

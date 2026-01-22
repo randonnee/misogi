@@ -14,6 +14,7 @@ import {
   generateCalendar,
   generateMovieGrid
 } from "./html_generators"
+import { cleanupUnusedImages } from "../scrapers/network/scrape-client"
 
 const TEMPLATE_PATH = "./generator/template.html"
 const OUTPUT_PATH = "./out/index.html"
@@ -76,6 +77,9 @@ async function main(): Promise<void> {
 
   console.log(`Total showtimes: ${showtimes.length}`)
   await generateSite(showtimes)
+
+  // Clean up unused images from the cache
+  await cleanupUnusedImages()
 }
 
 main()

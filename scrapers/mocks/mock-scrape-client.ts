@@ -1,6 +1,7 @@
 import { Effect } from "effect";
 import type { ScrapeClient } from "../network/scrape-client";
 import { getMockHtmlFilePath, getMockImageFilePath, getOutImageFilePath } from "./mock-utils";
+import { trackImageUsed } from "../network/image-cache";
 
 /**
  * A mock scrape client that reads HTML from the mocks/html folder.
@@ -43,6 +44,7 @@ export class MockScrapeClient implements ScrapeClient {
 
         // Always save to out/images for serving
         const outFilePath = getOutImageFilePath(url);
+        trackImageUsed(outFilePath);
         await Bun.write(outFilePath, data);
 
         return data;
