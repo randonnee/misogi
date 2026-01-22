@@ -47,7 +47,7 @@ export class NWFFScraper extends BaseScraper<void> {
         title: title,
         url: url,
       },
-      datetime: DateManager.parseISOAsPacific(time),
+      datetime: new Date(time),
       theater: NWFilmForum
     };
   }

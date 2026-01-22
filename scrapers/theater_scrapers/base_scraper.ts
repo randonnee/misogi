@@ -34,6 +34,7 @@ export interface CalendarPage<TContext> {
  */
 export abstract class BaseScraper<TContext = void> implements TheaterScraper {
   protected abstract readonly scrapeClient: ScrapeClient;
+  protected readonly scraperName: string = "BaseScraper";
   private fetchedMovieUrls = new Set<string>();
 
   // === ABSTRACT METHODS (must be implemented by subclasses) ===
@@ -99,23 +100,30 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
    */
   private fetchMoviePage(url: string): Effect.Effect<{ movieUrl: string; imageUrl: string | null }, Error> {
     if (this.fetchedMovieUrls.has(url)) {
+      console.log(`[${this.scraperName}] Skipping already fetched movie page: ${url}`);
       return Effect.succeed({ movieUrl: url, imageUrl: null });
     }
 
     this.fetchedMovieUrls.add(url);
+    console.log(`[${this.scraperName}] Fetching movie page: ${url}`);
 
     return pipe(
       this.scrapeClient.get(url),
+      Effect.tap(() => Effect.sync(() => console.log(`[${this.scraperName}] Successfully fetched movie page: ${url}`))),
       Effect.flatMap((html): Effect.Effect<{ movieUrl: string; imageUrl: string | null }, Error> => {
+        console.log(`[${this.scraperName}] Movie page HTML length: ${html.length} chars for ${url}`);
         const imageUrl = this.extractImageUrl(html);
+        console.log(`[${this.scraperName}] Extracted image URL: ${imageUrl} for ${url}`);
         if (imageUrl) {
           return pipe(
             this.scrapeClient.getImage(imageUrl),
+            Effect.tap(() => Effect.sync(() => console.log(`[${this.scraperName}] Successfully cached image: ${imageUrl}`))),
             Effect.map(() => ({ movieUrl: url, imageUrl: imageUrl as string | null }))
           );
         }
         return Effect.succeed({ movieUrl: url, imageUrl: null });
-      })
+      }),
+      Effect.tapError((error) => Effect.sync(() => console.error(`[${this.scraperName}] Error fetching movie page ${url}:`, error)))
     );
   }
 
@@ -129,6 +137,8 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
         .map(s => s.movie.url)
         .filter((url): url is string => url !== undefined)
     )];
+
+    console.log(`[${this.scraperName}] Fetching ${uniqueUrls.length} unique movie pages from ${showtimes.length} showtimes`);
 
     const fetchEffects = uniqueUrls.map(url =>
       this.fetchMoviePage(url)
@@ -144,6 +154,8 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
             imageUrlMap.set(movieUrl, imageUrl);
           }
         });
+
+        console.log(`[${this.scraperName}] Successfully extracted ${imageUrlMap.size} image URLs`);
 
         // Update showtimes with image URLs
         return showtimes.map(showtime => {
@@ -169,23 +181,34 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
    */
   getShowtimes(): Effect.Effect<Showtime[], Error> {
     const pages = this.getCalendarPages();
+    console.log(`[${this.scraperName}] Starting getShowtimes with ${pages.length} calendar pages`);
 
     return Effect.forEach(pages, ({ url, context }) =>
       pipe(
-        this.scrapeClient.get(url),
+        Effect.sync(() => console.log(`[${this.scraperName}] Fetching calendar page: ${url}`)),
+        Effect.andThen(() => this.scrapeClient.get(url)),
+        Effect.tap((html) => Effect.sync(() => console.log(`[${this.scraperName}] Calendar page HTML length: ${html.length} chars for ${url}`))),
         Effect.andThen((html) => cheerio.load(html)),
-        Effect.andThen(($) => ({ $, events: $(this.getEventSelector()) })),
+        Effect.andThen(($) => {
+          const events = $(this.getEventSelector());
+          console.log(`[${this.scraperName}] Found ${events.length} events on ${url} using selector "${this.getEventSelector()}"`);
+          return { $, events };
+        }),
         Effect.map(({ $, events }) =>
           events.map((_, event) => this.parseEvent($, $(event as Element), context)).get()
         ),
+        Effect.tapError((error) => Effect.sync(() => console.error(`[${this.scraperName}] Error fetching calendar page ${url}:`, error)))
       )
     ).pipe(
       // Flatten arrays - parseEvent can return Showtime, Showtime[], or null
       Effect.map((arraysOfResults) => arraysOfResults.flat()),
       Effect.map((results) => results.flat() as (Showtime | null)[]),
       Effect.map((showtimes) => showtimes.filter((s): s is Showtime => s !== null)),
+      Effect.tap((showtimes) => Effect.sync(() => console.log(`[${this.scraperName}] Parsed ${showtimes.length} valid showtimes before filtering`))),
       Effect.map((showtimes) => this.filterShowtimes(showtimes)),
+      Effect.tap((showtimes) => Effect.sync(() => console.log(`[${this.scraperName}] ${showtimes.length} showtimes after filtering`))),
       Effect.flatMap((showtimes) => this.fetchAllMoviePagesAndUpdateShowtimes(showtimes)),
+      Effect.tap((showtimes) => Effect.sync(() => console.log(`[${this.scraperName}] Completed getShowtimes with ${showtimes.length} final showtimes`))),
     );
   }
 }
