@@ -4,6 +4,7 @@ import type { Element } from "domhandler";
 import { TheBeacon } from "../theaters/theaters";
 import { getScrapeClient, type ScrapeClient } from "../network/scrape-client";
 import { BaseScraper, type CalendarPage } from "./base_scraper";
+import { DateManager } from "../utils/date-manager";
 
 export class BeaconScraper extends BaseScraper<void> {
   protected readonly scrapeClient: ScrapeClient = getScrapeClient();
@@ -29,7 +30,7 @@ export class BeaconScraper extends BaseScraper<void> {
         title: title,
         url: url,
       },
-      datetime: new Date(time),
+      datetime: DateManager.parseISOAsPacific(time),
       theater: TheBeacon
     };
   }
