@@ -113,7 +113,7 @@ function generateMovieCardHtml(movieGroup: MovieGroup): string {
     .join('')
 
   const movieImageHtml = movie.imageUrl
-    ? `<img class="movie-poster" src="/images/${imageUrlToFilename(movie.imageUrl)}" alt="${movie.title}">`
+    ? `<img class="movie-poster" src="images/${imageUrlToFilename(movie.imageUrl)}" alt="${movie.title}">`
     : ''
 
   return `
