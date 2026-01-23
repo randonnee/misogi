@@ -15,10 +15,10 @@ import {
   generateMovieGrid
 } from "./html_generators"
 import { cleanupUnusedImages } from "../scrapers/network/scrape-client"
+import { NOW_PLAYING_DAYS } from "../config"
 
 const TEMPLATE_PATH = "./generator/template.html"
 const OUTPUT_PATH = "./out/index.html"
-const NOW_PLAYING_DAYS = 7
 
 function parseTheatersArg(): string[] | null {
   const theatersArgIndex = process.argv.findIndex(arg => arg === "--theaters")

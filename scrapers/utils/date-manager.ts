@@ -1,12 +1,11 @@
 import { RUN_MODE } from "../config/run-mode";
+import { MOCK_DATE } from "../../config";
 
 export class DateManager {
-  // Fixed date for mock mode to ensure consistent mock file lookups
-  private static readonly MOCK_DATE = new Date("2026-01-19T12:00:00");
 
   static getNow(): Date {
     if (RUN_MODE === "mock") {
-      return new Date(DateManager.MOCK_DATE);
+      return new Date(MOCK_DATE);
     }
     return new Date();
   }

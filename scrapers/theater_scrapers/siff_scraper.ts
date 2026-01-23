@@ -11,7 +11,7 @@ export class SiffScraper extends BaseScraper<string> {
   protected readonly scrapeClient: ScrapeClient = getScrapeClient();
 
   getCalendarPages(): CalendarPage<string>[] {
-    return DateManager.getNextNDays(7).map(date => ({
+    return DateManager.getNextNDays(21).map(date => ({
       url: `https://www.siff.net/calendar?view=list&date=${date}`,
       context: date
     }));

@@ -4,6 +4,8 @@ import type { TheaterScraper } from "../models/theater_scraper";
 import * as cheerio from 'cheerio';
 import type { Element } from "domhandler";
 import type { ScrapeClient } from "../network/scrape-client";
+import { filterShowtimesForNextDays } from "../../generator/showtime_utils";
+import { NOW_PLAYING_DAYS } from "../../config";
 
 /**
  * Represents a calendar page to scrape, with optional context data
@@ -124,17 +126,20 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
   }
 
   /**
-   * Fetches all unique movie pages from the showtimes and updates showtimes with image URLs.
+   * Fetches movie pages for showtimes in the now-playing window and updates all showtimes with image URLs.
+   * Only fetches images for movies showing in the next NOW_PLAYING_DAYS days.
    * Each URL is only fetched once.
    */
   private fetchAllMoviePagesAndUpdateShowtimes(showtimes: Showtime[]): Effect.Effect<Showtime[], Error> {
+    // Only fetch images for movies in the now-playing window
+    const nowPlayingShowtimes = filterShowtimesForNextDays(showtimes, NOW_PLAYING_DAYS);
     const uniqueUrls = [...new Set(
-      showtimes
+      nowPlayingShowtimes
         .map(s => s.movie.url)
         .filter((url): url is string => url !== undefined)
     )];
 
-    console.log(`[${this.scraperName}] Fetching ${uniqueUrls.length} unique movie pages from ${showtimes.length} showtimes`);
+    console.log(`[${this.scraperName}] Fetching ${uniqueUrls.length} unique movie pages for now-playing (${nowPlayingShowtimes.length}/${showtimes.length} showtimes)`);
 
     const fetchEffects = uniqueUrls.map(url =>
       this.fetchMoviePage(url)
