@@ -33,7 +33,6 @@ export class BeaconScraper extends BaseScraper<void> {
     }
 
     const datetime = new Date(time);
-    console.log(`[${this.scraperName}] Parsed datetime: ${datetime.toISOString()} for "${title}"`);
 
     return {
       movie: {

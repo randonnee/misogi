@@ -10,21 +10,14 @@ export class DateManager {
     return new Date();
   }
 
-  static getDateYYYYMMDD(date: Date): string {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-
-    return `${year}-${month}-${day}`;
-  }
-
-  static getNextNDays(n: number): string[] {
+  // Get next n days in yyyy-mm-dd format
+  static getNextNDays(n: number, interval: number = 1): string[] {
     const nDays: string[] = [];
 
     const now = DateManager.getNow();
     for (let i = 0; i < n; i++) {
       const date = new Date(now);
-      date.setDate(now.getDate() + i);
+      date.setDate(now.getDate() + i * interval);
       const year = date.getFullYear();
       const month = String(date.getMonth() + 1).padStart(2, '0');
       const day = String(date.getDate()).padStart(2, '0');
@@ -33,7 +26,7 @@ export class DateManager {
     return nDays
   }
 
-  // Parse time string (e.g., "7:45 PM") and return a Date in PST/PDT
+  // Parse time string (e.g., "7:45 PM") and return a Date
   static parseDateTime(date: string, timeString: string): Date {
     const timeMatch = timeString.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
     if (!timeMatch) {
@@ -52,8 +45,6 @@ export class DateManager {
       hours = 0;
     }
 
-    // Build an ISO string with the date and time, then append PST timezone
-    // We need to determine if the date falls in PST (-08:00) or PDT (-07:00)
     const hoursStr24 = String(hours).padStart(2, '0');
     const minutesStr2 = String(minutes).padStart(2, '0');
 

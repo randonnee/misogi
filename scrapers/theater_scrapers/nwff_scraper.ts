@@ -8,24 +8,15 @@ import { BaseScraper, type CalendarPage } from "./base_scraper";
 
 export class NWFFScraper extends BaseScraper<void> {
   protected readonly scrapeClient: ScrapeClient = getScrapeClient();
+  protected override readonly scraperName = "NWFF Scraper";
 
   getCalendarPages(): CalendarPage<void>[] {
-    const now = DateManager.getNow();
-
-    const pages: CalendarPage<void>[] = [];
-    for (let i = 0; i < 4; i++) {
-      const date = new Date(now);
-      date.setDate(now.getDate() + i * 7);
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, '0');
-      const day = String(date.getDate()).padStart(2, '0');
-      const dateString = `${year}-${month}-${day}`;
-      pages.push({
-        url: `https://nwfilmforum.org/calendar/?start=${dateString}&type=film`,
-        context: undefined
-      });
-    }
-
+    const dates = DateManager.getNextNDays(4, 7)
+    console.log("dates", dates)
+    const pages: CalendarPage<void>[] = dates.map((date) => ({
+      url: `https://nwfilmforum.org/calendar/?start=${date}&type=film`,
+      context: undefined
+    }))
     return pages;
   }
 

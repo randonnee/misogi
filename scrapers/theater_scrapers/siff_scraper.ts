@@ -9,6 +9,7 @@ import { BaseScraper, type CalendarPage } from "./base_scraper";
 
 export class SiffScraper extends BaseScraper<string> {
   protected readonly scrapeClient: ScrapeClient = getScrapeClient();
+  protected override readonly scraperName = "SIFF Scraper";
 
   getCalendarPages(): CalendarPage<string>[] {
     return DateManager.getNextNDays(21).map(date => ({
