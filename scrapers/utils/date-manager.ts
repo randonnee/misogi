@@ -19,20 +19,23 @@ export class DateManager {
     return `${year}-${month}-${day}`;
   }
 
-  static getNextNDays(n: number): Date[] {
-    const nDays: Date[] = [];
+  static getNextNDays(n: number): string[] {
+    const nDays: string[] = [];
 
     const now = DateManager.getNow();
     for (let i = 0; i < n; i++) {
       const date = new Date(now);
       date.setDate(now.getDate() + i);
-      nDays.push(date)
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      nDays.push(`${year}-${month}-${day}`)
     }
     return nDays
   }
 
   // Parse time string (e.g., "7:45 PM") and return a Date in PST/PDT
-  static parseDateTime(date: Date, timeString: string): Date {
+  static parseDateTime(date: string, timeString: string): Date {
     const timeMatch = timeString.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
     if (!timeMatch) {
       throw new Error(`Invalid time format: ${timeString}`);
@@ -52,39 +55,10 @@ export class DateManager {
 
     // Build an ISO string with the date and time, then append PST timezone
     // We need to determine if the date falls in PST (-08:00) or PDT (-07:00)
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
     const hoursStr24 = String(hours).padStart(2, '0');
     const minutesStr2 = String(minutes).padStart(2, '0');
 
-    // Determine if DST is in effect for this date in America/Los_Angeles
-    // DST starts 2nd Sunday of March, ends 1st Sunday of November
-    const offset = DateManager.getPacificOffset(date);
-
-    const isoString = `${year}-${month}-${day}T${hoursStr24}:${minutesStr2}:00${offset}`;
+    const isoString = `${date}T${hoursStr24}:${minutesStr2}`;
     return new Date(isoString);
-  }
-
-  // Get the UTC offset for Pacific timezone on a given date
-  // Returns "-08:00" for PST or "-07:00" for PDT
-  private static getPacificOffset(date: Date): string {
-    // Create a date formatter that outputs the timezone offset
-    const formatter = new Intl.DateTimeFormat('en-US', {
-      timeZone: 'America/Los_Angeles',
-      timeZoneName: 'shortOffset'
-    });
-    const parts = formatter.formatToParts(date);
-    const tzPart = parts.find(p => p.type === 'timeZoneName');
-    
-    // tzPart.value will be like "GMT-8" or "GMT-7"
-    if (tzPart?.value?.includes('-8')) {
-      return '-08:00';
-    } else if (tzPart?.value?.includes('-7')) {
-      return '-07:00';
-    }
-    
-    // Fallback to PST if we can't determine
-    return '-08:00';
   }
 }

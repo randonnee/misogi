@@ -109,15 +109,11 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
 
     return pipe(
       this.scrapeClient.get(url),
-      Effect.tap(() => Effect.sync(() => console.log(`[${this.scraperName}] Successfully fetched movie page: ${url}`))),
       Effect.flatMap((html): Effect.Effect<{ movieUrl: string; imageUrl: string | null }, Error> => {
-        console.log(`[${this.scraperName}] Movie page HTML length: ${html.length} chars for ${url}`);
         const imageUrl = this.extractImageUrl(html);
-        console.log(`[${this.scraperName}] Extracted image URL: ${imageUrl} for ${url}`);
         if (imageUrl) {
           return pipe(
             this.scrapeClient.getImage(imageUrl),
-            Effect.tap(() => Effect.sync(() => console.log(`[${this.scraperName}] Successfully cached image: ${imageUrl}`))),
             Effect.map(() => ({ movieUrl: url, imageUrl: imageUrl as string | null }))
           );
         }
@@ -155,7 +151,6 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
           }
         });
 
-        console.log(`[${this.scraperName}] Successfully extracted ${imageUrlMap.size} image URLs`);
 
         // Update showtimes with image URLs
         return showtimes.map(showtime => {
@@ -187,11 +182,9 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
       pipe(
         Effect.sync(() => console.log(`[${this.scraperName}] Fetching calendar page: ${url}`)),
         Effect.andThen(() => this.scrapeClient.get(url)),
-        Effect.tap((html) => Effect.sync(() => console.log(`[${this.scraperName}] Calendar page HTML length: ${html.length} chars for ${url}`))),
         Effect.andThen((html) => cheerio.load(html)),
         Effect.andThen(($) => {
           const events = $(this.getEventSelector());
-          console.log(`[${this.scraperName}] Found ${events.length} events on ${url} using selector "${this.getEventSelector()}"`);
           return { $, events };
         }),
         Effect.map(({ $, events }) =>
@@ -204,9 +197,7 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
       Effect.map((arraysOfResults) => arraysOfResults.flat()),
       Effect.map((results) => results.flat() as (Showtime | null)[]),
       Effect.map((showtimes) => showtimes.filter((s): s is Showtime => s !== null)),
-      Effect.tap((showtimes) => Effect.sync(() => console.log(`[${this.scraperName}] Parsed ${showtimes.length} valid showtimes before filtering`))),
       Effect.map((showtimes) => this.filterShowtimes(showtimes)),
-      Effect.tap((showtimes) => Effect.sync(() => console.log(`[${this.scraperName}] ${showtimes.length} showtimes after filtering`))),
       Effect.flatMap((showtimes) => this.fetchAllMoviePagesAndUpdateShowtimes(showtimes)),
       Effect.tap((showtimes) => Effect.sync(() => console.log(`[${this.scraperName}] Completed getShowtimes with ${showtimes.length} final showtimes`))),
     );

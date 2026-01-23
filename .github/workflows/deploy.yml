@@ -9,6 +9,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 concurrency:
@@ -31,7 +32,7 @@ jobs:
         run: bun install
 
       - name: Restore image cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: out/images
           key: movie-images-cache
@@ -51,6 +52,20 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+
+      - name: Delete old image caches
+        run: |
+          gh cache list --key movie-images-cache --json id -q '.[].id' | while read id; do
+            gh cache delete "$id" || true
+          done
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Save image cache
+        uses: actions/cache/save@v4
+        with:
+          path: out/images
+          key: movie-images-cache
 
   deploy:
     environment:

@@ -24,17 +24,17 @@ export class BeaconScraper extends BaseScraper<void> {
     const url = link.attr("href");
     const title = link.find('[itemprop="name"]').text().trim();
     const time = link.find('[itemprop="startDate"]').attr("content")?.trim();
-    
+
     console.log(`[${this.scraperName}] Parsing event: title="${title}", url="${url}", time="${time}"`);
-    
+
     if (!time) {
       console.log(`[${this.scraperName}] Skipping event - no time found for "${title}"`);
       return null;
     }
-    
+
     const datetime = new Date(time);
     console.log(`[${this.scraperName}] Parsed datetime: ${datetime.toISOString()} for "${title}"`);
-    
+
     return {
       movie: {
         title: title,
@@ -55,7 +55,6 @@ export class BeaconScraper extends BaseScraper<void> {
     // First try the main_image class
     const mainImage = $("img.main_image").attr("src");
     if (mainImage) {
-      console.log(`[${this.scraperName}] Found main_image: ${mainImage}`);
       return mainImage;
     }
 
@@ -67,7 +66,6 @@ export class BeaconScraper extends BaseScraper<void> {
 
   protected override filterShowtimes(showtimes: Showtime[]): Showtime[] {
     const filtered = showtimes.filter((showtime) => showtime.movie.title !== "RENT THE BEACON");
-    console.log(`[${this.scraperName}] Filtered showtimes: ${showtimes.length} -> ${filtered.length} (removed ${showtimes.length - filtered.length} "RENT THE BEACON" entries)`);
     return filtered;
   }
 }

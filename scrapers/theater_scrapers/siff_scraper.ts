@@ -7,12 +7,12 @@ import { getScrapeClient, type ScrapeClient } from "../network/scrape-client";
 import { DateManager } from "../utils/date-manager";
 import { BaseScraper, type CalendarPage } from "./base_scraper";
 
-export class SiffScraper extends BaseScraper<Date> {
+export class SiffScraper extends BaseScraper<string> {
   protected readonly scrapeClient: ScrapeClient = getScrapeClient();
 
-  getCalendarPages(): CalendarPage<Date>[] {
+  getCalendarPages(): CalendarPage<string>[] {
     return DateManager.getNextNDays(7).map(date => ({
-      url: `https://www.siff.net/calendar?view=list&date=${DateManager.getDateYYYYMMDD(date)}`,
+      url: `https://www.siff.net/calendar?view=list&date=${date}`,
       context: date
     }));
   }
@@ -21,7 +21,7 @@ export class SiffScraper extends BaseScraper<Date> {
     return "div.item";
   }
 
-  parseEvent($: cheerio.CheerioAPI, event: cheerio.Cheerio<Element>, date: Date): Showtime[] | null {
+  parseEvent($: cheerio.CheerioAPI, event: cheerio.Cheerio<Element>, date: string): Showtime[] | null {
     const link = event.find("h3 > a").first();
     const url = "https://siff.net" + link.attr("href");
     const title = link.text().trim();

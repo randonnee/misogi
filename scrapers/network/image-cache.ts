@@ -28,7 +28,6 @@ export async function cleanupUnusedImages(): Promise<void> {
       if (!usedImageFiles.has(filePath)) {
         await unlink(filePath);
         deletedCount++;
-        console.log(`Deleted unused image: ${filePath}`);
       }
     }
 
