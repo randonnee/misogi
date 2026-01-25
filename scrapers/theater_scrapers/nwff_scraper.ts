@@ -12,7 +12,6 @@ export class NWFFScraper extends BaseScraper<void> {
 
   getCalendarPages(): CalendarPage<void>[] {
     const dates = DateManager.getNextNDays(4, 7)
-    console.log("dates", dates)
     const pages: CalendarPage<void>[] = dates.map((date) => ({
       url: `https://nwfilmforum.org/calendar/?start=${date}&type=film`,
       context: undefined
@@ -41,14 +40,5 @@ export class NWFFScraper extends BaseScraper<void> {
       datetime: new Date(time),
       theater: NWFilmForum
     };
-  }
-
-  /**
-   * Extracts the movie image URL from a movie page HTML.
-   * Uses default implementation (og:image, twitter:image).
-   */
-  protected override extractImageUrl(html: string): string | null {
-    // NWFF uses standard meta tags, so default implementation works
-    return super.extractImageUrl(html);
   }
 }

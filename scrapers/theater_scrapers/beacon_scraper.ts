@@ -10,9 +10,7 @@ export class BeaconScraper extends BaseScraper<void> {
   protected override readonly scraperName = "BeaconScraper";
 
   getCalendarPages(): CalendarPage<void>[] {
-    const pages = [{ url: "https://thebeacon.film/calendar", context: undefined }];
-    console.log(`[${this.scraperName}] Calendar pages to fetch:`, pages.map(p => p.url));
-    return pages;
+    return [{ url: "https://thebeacon.film/calendar", context: undefined }];
   }
 
   getEventSelector(): string {
@@ -24,8 +22,6 @@ export class BeaconScraper extends BaseScraper<void> {
     const url = link.attr("href");
     const title = link.find('[itemprop="name"]').text().trim();
     const time = link.find('[itemprop="startDate"]').attr("content")?.trim();
-
-    console.log(`[${this.scraperName}] Parsing event: title="${title}", url="${url}", time="${time}"`);
 
     if (!time) {
       console.log(`[${this.scraperName}] Skipping event - no time found for "${title}"`);
@@ -57,10 +53,7 @@ export class BeaconScraper extends BaseScraper<void> {
       return mainImage;
     }
 
-    // Fallback to default implementation 
-    const fallbackUrl = super.extractImageUrl(html);
-    console.log(`[${this.scraperName}] Using fallback image URL: ${fallbackUrl}`);
-    return fallbackUrl;
+    return null
   }
 
   protected override filterShowtimes(showtimes: Showtime[]): Showtime[] {
