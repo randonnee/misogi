@@ -2,6 +2,7 @@ import type { TheaterScraper } from "../scrapers/models/theater_scraper"
 import { BeaconScraper } from "../scrapers/theater_scrapers/beacon_scraper"
 import { SiffScraper } from "../scrapers/theater_scrapers/siff_scraper"
 import { NWFFScraper } from "../scrapers/theater_scrapers/nwff_scraper"
+import { GrandIllusionScraper } from "../scrapers/theater_scrapers/grand_illusion_scraper"
 
 interface ScraperEntry {
   theaterIds: string[]
@@ -14,6 +15,7 @@ const SCRAPER_REGISTRY: ScraperEntry[] = [
   { theaterIds: ["beacon"], scraper: new BeaconScraper() },
   { theaterIds: ["siff"], scraper: new SiffScraper() },
   { theaterIds: ["nwff"], scraper: new NWFFScraper() },
+  { theaterIds: ["grand-illusion"], scraper: new GrandIllusionScraper() },
 ]
 
 export function getAllScrapers(): TheaterScraper[] {

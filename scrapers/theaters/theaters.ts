@@ -25,6 +25,11 @@ export const NWFilmForum: Theater = {
   url: "https://nwfilmforum.org",
   id: "nwff"
 }
+export const GrandIllusion: Theater = {
+  name: "The Grand Illusion",
+  url: "https://grandillusioncinema.org",
+  id: "grand-illusion"
+}
 
 
-export const ALL_THEATERS = [TheBeacon, SiffUptown, SiffDowntown, SiffCenter, NWFilmForum]
+export const ALL_THEATERS = [TheBeacon, SiffUptown, SiffDowntown, SiffCenter, NWFilmForum, GrandIllusion]
