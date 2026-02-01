@@ -140,3 +140,25 @@ export function generateMovieGrid(
     movieGrid.append(generateMovieCardHtml(movieGroup))
   })
 }
+
+function generateTheaterAboutCardHtml(theater: typeof ALL_THEATERS[number]): string {
+  const addressHtml = theater.addressLink
+    ? `<a href="${theater.addressLink}" target="_blank">${theater.address}</a>`
+    : theater.address
+
+  return `
+    <div class="theater-about-card">
+      <div class="theater-about-name"><a href="${theater.url}" target="_blank">${theater.name}</a></div>
+      <div class="theater-about-address">${addressHtml}</div>
+      <blockquote class="theater-about-description">"${theater.about}"</blockquote>
+    </div>
+  `
+}
+
+export function generateTheatersAbout($: cheerio.CheerioAPI): void {
+  const theatersAbout = $("#theaters-about")
+  ALL_THEATERS.forEach(theater => {
+    console.log("generating theater about")
+    theatersAbout.append(generateTheaterAboutCardHtml(theater))
+  })
+}

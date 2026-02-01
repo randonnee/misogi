@@ -12,7 +12,8 @@ import {
 import {
   generateTheaterFilters,
   generateCalendar,
-  generateMovieGrid
+  generateMovieGrid,
+  generateTheatersAbout
 } from "./html_generators"
 import { cleanupUnusedImages } from "../scrapers/network/scrape-client"
 import { NOW_PLAYING_DAYS } from "../config"
@@ -50,6 +51,9 @@ async function generateSite(showtimes: Showtime[]): Promise<void> {
   const nowPlayingShowtimes = filterShowtimesForNextDays(sortedShowtimes, NOW_PLAYING_DAYS)
   const showtimesByMovieAndTheater = groupShowtimesByMovieAndTheater(nowPlayingShowtimes)
   generateMovieGrid($, showtimesByMovieAndTheater)
+
+  // Generate about view content
+  generateTheatersAbout($)
 
   await Bun.write(OUTPUT_PATH, $.html())
 }

@@ -4,4 +4,7 @@ export interface Theater {
   name: string;
   url: string;
   id: TheaterId;
+  about: string;
+  address: string;
+  addressLink?: string;
 }
