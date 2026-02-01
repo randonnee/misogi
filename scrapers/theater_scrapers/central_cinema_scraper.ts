@@ -35,9 +35,10 @@ export class CentralCinemaScraper implements TheaterScraper {
       ),
       // 4. Flatten results
       Effect.map((results) => results.flat()),
-      Effect.tap((showtimes) => Effect.sync(() => 
+      Effect.tap((showtimes) => Effect.sync(() =>
         console.log(`[${this.scraperName}] Completed with ${showtimes.length} total showtimes`)
-      ))
+      )),
+      Effect.tapError((error) => Effect.sync(() => console.error(`[${this.scraperName}] Error getting showtimes:`, error)))
     );
   }
 
@@ -99,7 +100,7 @@ export class CentralCinemaScraper implements TheaterScraper {
    */
   private parseMoviePage(html: string, url: string): Showtime[] {
     const $ = cheerio.load(html);
-    
+
     // Parse movie metadata from JSON-LD
     const movie = this.parseJsonLdMovieData($, url);
     if (!movie.title) {
@@ -109,11 +110,11 @@ export class CentralCinemaScraper implements TheaterScraper {
 
     // Parse showtimes from <h2><a href="...checkout/showing..."> elements
     const showtimes: Showtime[] = [];
-    
+
     $('h2 a[href*="/checkout/showing/"]').each((_, el) => {
       const dateText = $(el).text().trim();
       const datetime = this.parseShowtimeDate(dateText);
-      
+
       if (datetime) {
         showtimes.push({
           movie,
@@ -139,7 +140,7 @@ export class CentralCinemaScraper implements TheaterScraper {
       try {
         const jsonText = $(el).html();
         if (!jsonText) return;
-        
+
         const data = JSON.parse(jsonText) as JsonLdMovie;
         if (data["@type"] !== "Movie") return;
 

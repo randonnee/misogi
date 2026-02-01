@@ -158,7 +158,6 @@ function generateTheaterAboutCardHtml(theater: typeof ALL_THEATERS[number]): str
 export function generateTheatersAbout($: cheerio.CheerioAPI): void {
   const theatersAbout = $("#theaters-about")
   ALL_THEATERS.forEach(theater => {
-    console.log("generating theater about")
     theatersAbout.append(generateTheaterAboutCardHtml(theater))
   })
 }
