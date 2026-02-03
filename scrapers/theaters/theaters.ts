@@ -58,4 +58,4 @@ export const CentralCinema: Theater = {
 }
 
 
-export const ALL_THEATERS = [TheBeacon, SiffUptown, SiffDowntown, SiffCenter, NWFilmForum, GrandIllusion, CentralCinema]
+export const ALL_THEATERS = [TheBeacon, SiffUptown, SiffDowntown, SiffCenter, NWFilmForum, GrandIllusion]
