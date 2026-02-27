@@ -17,6 +17,9 @@
     "generate": "RUN_MODE=mock bun run generator/generate.ts --",
     "generate:prod": "RUN_MODE=prod bun run generator/generate.ts --",
     "generate:update-mocks": "RUN_MODE=update_mocks bun run generator/generate.ts --",
-    "start": "bun run index.ts"
+    "start": "bun run index.ts",
+    "deploy": "./deploy.sh",
+    "deploy:generate-only": "./deploy.sh --generate-only",
+    "deploy:deploy-only": "./deploy.sh --deploy-only"
   }
 }
