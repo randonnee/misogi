@@ -18,7 +18,8 @@
 }
 
 /* Reset heading styles used for semantic SEO so they inherit parent styles */
-h2, h3 {
+h2,
+h3 {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
@@ -213,7 +214,6 @@ main {
 
 .separator {
   color: var(--border);
-  font-weight: 300;
 }
 
 .datetime {
@@ -302,7 +302,14 @@ main {
 }
 
 .showtime-times {
-  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0 0.5rem;
+}
+
+.showtime-time {
+  white-space: nowrap;
 }
 
 .movie-card {
@@ -379,7 +386,7 @@ main {
 .showtime-dates {
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
+  gap: 0.25rem;
 }
 
 /* About View */
@@ -467,7 +474,6 @@ main {
   .theater-filters {
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 300px;
     margin: 0 auto;
     gap: 0.5rem;
   }

@@ -87,9 +87,10 @@ function generateShowtimeDatesHtml(showtimes: Showtime[]): string {
   })
 
   return Object.entries(showtimesByDate)
-    .map(([date, times]) =>
-      `<div class="showtime-date-row"><span class="showtime-date">${date}</span><span class="showtime-times">${times.join(', ')}</span></div>`
-    )
+    .map(([date, times]) => {
+      const timeSpans = times.map(t => `<span class="showtime-time">${t}</span>`).join('')
+      return `<div class="showtime-date-row"><span class="showtime-date">${date}</span><span class="showtime-times">${timeSpans}</span></div>`
+    })
     .join('')
 }
 
