@@ -63,7 +63,7 @@ export function groupDayShowtimesByMovieTheater(
       hour: 'numeric',
       minute: '2-digit',
       hour12: true
-    })
+    }).replace(' ', '')
     acc[key].times.push(time)
     return acc
   }, {} as Record<string, MovieTheaterGroup>)
