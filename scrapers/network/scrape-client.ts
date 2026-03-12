@@ -103,20 +103,23 @@ export class ScrapeClientImpl implements ScrapeClient {
   getImage(url: string): Effect.Effect<Uint8Array, Error> {
     return Effect.tryPromise({
       try: async () => {
-        // Check if image already exists in out/images (cache hit)
         const outFilePath = getOutImageFilePath(url);
-        const existingFile = Bun.file(outFilePath);
 
         // Track this image as used for cleanup
         trackImageUsed(outFilePath);
 
-        if (await existingFile.exists()) {
-          console.log(`Using cached image: ${outFilePath}`);
-          const buffer = await existingFile.arrayBuffer();
-          return new Uint8Array(buffer);
+        // In update_mocks mode, always download so we save the mock file
+        if (RUN_MODE !== "update_mocks") {
+          // Check if image already exists in out/images (cache hit)
+          const existingFile = Bun.file(outFilePath);
+          if (await existingFile.exists()) {
+            console.log(`Using cached image: ${outFilePath}`);
+            const buffer = await existingFile.arrayBuffer();
+            return new Uint8Array(buffer);
+          }
         }
 
-        // Cache miss - download the image
+        // Cache miss (or update_mocks mode) - download the image
         await this.enforceDelay();
 
         const response = await fetch(url, {
