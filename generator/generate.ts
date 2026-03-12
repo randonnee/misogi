@@ -17,9 +17,13 @@ import {
 } from "./html_generators"
 import { cleanupUnusedImages } from "../scrapers/network/scrape-client"
 import { NOW_PLAYING_DAYS } from "../config"
+import { readdir, copyFile } from "node:fs/promises"
+import { join } from "node:path"
 
 const TEMPLATE_PATH = "./generator/template.html"
 const OUTPUT_PATH = "./out/index.html"
+const STATIC_DIR = "./static"
+const OUTPUT_DIR = "./out"
 
 function parseTheatersArg(): string[] | null {
   const theatersArgIndex = process.argv.findIndex(arg => arg === "--theaters")
@@ -58,6 +62,14 @@ async function generateSite(showtimes: Showtime[]): Promise<void> {
   await Bun.write(OUTPUT_PATH, $.html())
 }
 
+async function copyStaticAssets(): Promise<void> {
+  const files = await readdir(STATIC_DIR)
+  await Promise.all(
+    files.map(file => copyFile(join(STATIC_DIR, file), join(OUTPUT_DIR, file)))
+  )
+  console.log(`Copied ${files.length} static assets to ${OUTPUT_DIR}`)
+}
+
 async function main(): Promise<void> {
   const requestedTheaters = parseTheatersArg()
 
@@ -81,6 +93,9 @@ async function main(): Promise<void> {
 
   console.log(`Total showtimes: ${showtimes.length}`)
   await generateSite(showtimes)
+
+  // Copy static assets (CSS, JS, favicon, etc.) to output directory
+  await copyStaticAssets()
 
   // Clean up unused images from the cache
   await cleanupUnusedImages()

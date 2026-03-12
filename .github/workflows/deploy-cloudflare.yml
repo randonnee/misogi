@@ -40,13 +40,6 @@ jobs:
       - name: Generate site
         run: bun run generate:prod
 
-      - name: Copy static assets to output
-        run: |
-          cp -r static/* out/
-          if [ -d "images" ]; then
-            cp -r images out/
-          fi
-
       - name: Upload static artifact
         uses: actions/upload-artifact@v4
         with:

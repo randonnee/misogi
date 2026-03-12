@@ -81,9 +81,6 @@ generate() {
   log "Generating site (RUN_MODE=prod)..."
   bun run generate:prod
 
-  log "Copying static assets to out/..."
-  cp -r static/* out/
-
   log "Generation complete. Output in out/"
 }
 
