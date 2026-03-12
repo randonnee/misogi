@@ -3,7 +3,7 @@ import * as cheerio from 'cheerio';
 import type { Element } from "domhandler";
 import { GrandIllusion } from "../theaters/theaters";
 import { getScrapeClient, type ScrapeClient } from "../network/scrape-client";
-import { BaseScraper, type CalendarPage } from "./base_scraper";
+import { BaseScraper, type CalendarPage, type MoviePageDetails } from "./base_scraper";
 
 export class GrandIllusionScraper extends BaseScraper<void> {
   protected readonly scrapeClient: ScrapeClient = getScrapeClient();
@@ -149,24 +149,25 @@ export class GrandIllusionScraper extends BaseScraper<void> {
   }
 
   /**
-   * Extracts the movie image URL from a movie page HTML.
+   * Extracts movie details from a movie page HTML.
    * The Grand Illusion uses wp-post-image class for posters.
    */
-  protected override extractImageUrl(html: string): string | null {
+  protected override extractMovieDetails(html: string): MoviePageDetails {
     const $ = cheerio.load(html);
 
     // Try the WordPress post image
+    let imageUrl: string | undefined;
     const postImage = $("img.wp-post-image").attr("src");
     if (postImage) {
-      return postImage;
+      imageUrl = postImage;
+    } else {
+      // Fall back to og:image
+      const ogImage = $('meta[property="og:image"]').attr("content");
+      if (ogImage) {
+        imageUrl = ogImage;
+      }
     }
 
-    // Fall back to og:image
-    const ogImage = $('meta[property="og:image"]').attr("content");
-    if (ogImage) {
-      return ogImage;
-    }
-
-    return null;
+    return { imageUrl };
   }
 }

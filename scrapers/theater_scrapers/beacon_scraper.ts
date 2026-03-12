@@ -3,7 +3,7 @@ import * as cheerio from 'cheerio';
 import type { Element } from "domhandler";
 import { TheBeacon } from "../theaters/theaters";
 import { getScrapeClient, type ScrapeClient } from "../network/scrape-client";
-import { BaseScraper, type CalendarPage } from "./base_scraper";
+import { BaseScraper, type CalendarPage, type MoviePageDetails } from "./base_scraper";
 
 export class BeaconScraper extends BaseScraper<void> {
   protected readonly scrapeClient: ScrapeClient = getScrapeClient();
@@ -41,19 +41,73 @@ export class BeaconScraper extends BaseScraper<void> {
   }
 
   /**
-   * Extracts the movie image URL from a movie page HTML.
-   * Looks for the main_image img element or og:image meta tag.
+   * Extracts movie details from a Beacon detail page.
+   * Looks for image (img.main_image), director (<h4>Director</h4>),
+   * runtime (<h4>Runtime</h4>), year (<h3> after <h1>), and actors (<h4>Starring</h4>).
    */
-  protected override extractImageUrl(html: string): string | null {
+  protected override extractMovieDetails(html: string): MoviePageDetails {
     const $ = cheerio.load(html);
+    const details: MoviePageDetails = {};
 
-    // First try the main_image class
+    // Image: img.main_image
     const mainImage = $("img.main_image").attr("src");
     if (mainImage) {
-      return mainImage;
+      details.imageUrl = mainImage;
     }
 
-    return null
+    // Year: <h3> element containing a 4-digit year (appears after the <h1> title)
+    const h3Text = $("h1").first().next("h3").text().trim();
+    const yearMatch = h3Text.match(/^\d{4}$/);
+    if (yearMatch) {
+      details.releaseYear = parseInt(yearMatch[0], 10);
+    }
+
+    // Director: find <h4> with text "Director", then get sibling <p> elements
+    $("h4").each((_, el) => {
+      if ($(el).text().trim() === "Director") {
+        const directorPs = $(el).parent().find("p");
+        const directors = directorPs
+          .map((_, p) => $(p).text().trim())
+          .get()
+          .filter(d => d.length > 0);
+        if (directors.length > 0) {
+          details.directors = directors;
+        }
+      }
+    });
+
+    // Runtime: find <h4> with text "Runtime", then get next <p> and parse "N minutes"
+    $("h4").each((_, el) => {
+      if ($(el).text().trim() === "Runtime") {
+        const runtimeText = $(el).next("p").text().trim();
+        const runtimeMatch = runtimeText.match(/(\d+)\s*minutes/);
+        if (runtimeMatch?.[1]) {
+          details.runtime = parseInt(runtimeMatch[1], 10);
+        }
+      }
+    });
+
+    // Actors: find <h4> with text "Starring", then get sibling <p> elements
+    $("h4").each((_, el) => {
+      if ($(el).text().trim() === "Starring") {
+        const actorPs = $(el).parent().find("p");
+        const actors = actorPs
+          .map((_, p) => $(p).text().trim())
+          .get()
+          .filter(a => a.length > 0);
+        if (actors.length > 0) {
+          details.actors = actors;
+        }
+      }
+    });
+
+    // Description
+    const description = $(".entry_description").text().trim();
+    if (description) {
+      details.description = description;
+    }
+
+    return details;
   }
 
   protected override filterShowtimes(showtimes: Showtime[]): Showtime[] {

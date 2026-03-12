@@ -17,6 +17,19 @@ export interface CalendarPage<TContext> {
 }
 
 /**
+ * Metadata extracted from a movie's detail page.
+ * Returned by extractMovieDetails() and merged into Showtime.movie.
+ */
+export interface MoviePageDetails {
+  imageUrl?: string;
+  directors?: string[];
+  actors?: string[];
+  runtime?: number;
+  description?: string;
+  releaseYear?: number;
+}
+
+/**
  * Abstract base class for theater scrapers.
  * Provides shared infrastructure for:
  * - Fetching calendar pages
@@ -31,7 +44,7 @@ export interface CalendarPage<TContext> {
  * - parseEvent(): Parses a single event element into Showtime(s)
  *
  * Subclasses may override:
- * - extractImageUrl(): Custom image extraction logic
+ * - extractMovieDetails(): Custom metadata extraction from detail pages
  * - filterShowtimes(): Post-processing filter for showtimes
  */
 export abstract class BaseScraper<TContext = void> implements TheaterScraper {
@@ -69,20 +82,20 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
   // === OVERRIDABLE METHODS (with sensible defaults) ===
 
   /**
-   * Extracts the movie image URL from a movie page HTML.
-   * Default implementation checks og:image and twitter:image meta tags.
-   * Override this method to add theater-specific image extraction logic.
+   * Extracts movie details (image URL, director, runtime, year, etc.) from a movie detail page.
+   * Default implementation only extracts og:image.
+   * Override this method to add theater-specific metadata extraction logic.
    */
-  protected extractImageUrl(html: string): string | null {
+  protected extractMovieDetails(html: string): MoviePageDetails {
     const $ = cheerio.load(html);
 
     // Try og:image meta tag first
     const ogImage = $('meta[property="og:image"]').attr("content");
     if (ogImage) {
-      return ogImage;
+      return { imageUrl: ogImage };
     }
 
-    return null;
+    return {};
   }
 
   /**
@@ -98,12 +111,12 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
 
   /**
    * Fetches a movie page if it hasn't been fetched before.
-   * Returns the image URL extracted from the page, or null if already fetched or no image found.
+   * Returns the movie details extracted from the page, or empty details if already fetched.
    */
-  private fetchMoviePage(url: string): Effect.Effect<{ movieUrl: string; imageUrl: string | null }, Error> {
+  private fetchMoviePage(url: string): Effect.Effect<{ movieUrl: string; details: MoviePageDetails }, Error> {
     if (this.fetchedMovieUrls.has(url)) {
       console.log(`[${this.scraperName}] Skipping already fetched movie page: ${url}`);
-      return Effect.succeed({ movieUrl: url, imageUrl: null });
+      return Effect.succeed({ movieUrl: url, details: {} });
     }
 
     this.fetchedMovieUrls.add(url);
@@ -111,27 +124,27 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
 
     return pipe(
       this.scrapeClient.get(url),
-      Effect.flatMap((html): Effect.Effect<{ movieUrl: string; imageUrl: string | null }, Error> => {
-        const imageUrl = this.extractImageUrl(html);
-        if (imageUrl) {
+      Effect.flatMap((html): Effect.Effect<{ movieUrl: string; details: MoviePageDetails }, Error> => {
+        const details = this.extractMovieDetails(html);
+        if (details.imageUrl) {
           return pipe(
-            this.scrapeClient.getImage(imageUrl),
-            Effect.map(() => ({ movieUrl: url, imageUrl: imageUrl as string | null }))
+            this.scrapeClient.getImage(details.imageUrl),
+            Effect.map(() => ({ movieUrl: url, details }))
           );
         }
-        return Effect.succeed({ movieUrl: url, imageUrl: null });
+        return Effect.succeed({ movieUrl: url, details });
       }),
       Effect.tapError((error) => Effect.sync(() => console.error(`[${this.scraperName}] Error fetching movie page ${url}:`, error)))
     );
   }
 
   /**
-   * Fetches movie pages for showtimes in the now-playing window and updates all showtimes with image URLs.
-   * Only fetches images for movies showing in the next NOW_PLAYING_DAYS days.
+   * Fetches movie pages for showtimes in the now-playing window and updates all showtimes with movie details.
+   * Only fetches details for movies showing in the next NOW_PLAYING_DAYS days.
    * Each URL is only fetched once.
    */
   private fetchAllMoviePagesAndUpdateShowtimes(showtimes: Showtime[]): Effect.Effect<Showtime[], Error> {
-    // Only fetch images for movies in the now-playing window
+    // Only fetch details for movies in the now-playing window
     const nowPlayingShowtimes = filterShowtimesForNextDays(showtimes, NOW_PLAYING_DAYS);
     const uniqueUrls = [...new Set(
       nowPlayingShowtimes
@@ -148,24 +161,30 @@ export abstract class BaseScraper<TContext = void> implements TheaterScraper {
     return pipe(
       Effect.all(fetchEffects, { concurrency: 1 }),
       Effect.map((results) => {
-        // Build a map of movie URL -> image URL
-        const imageUrlMap = new Map<string, string>();
-        results.forEach(({ movieUrl, imageUrl }) => {
-          if (imageUrl) {
-            imageUrlMap.set(movieUrl, imageUrl);
+        // Build a map of movie URL -> movie details
+        const detailsMap = new Map<string, MoviePageDetails>();
+        results.forEach(({ movieUrl, details }) => {
+          if (Object.keys(details).length > 0) {
+            detailsMap.set(movieUrl, details);
           }
         });
 
-
-        // Update showtimes with image URLs
+        // Update showtimes with details from movie pages
+        // Only overwrite fields that are not already set on the showtime
         return showtimes.map(showtime => {
           const movieUrl = showtime.movie.url;
-          if (movieUrl && imageUrlMap.has(movieUrl)) {
+          if (movieUrl && detailsMap.has(movieUrl)) {
+            const details = detailsMap.get(movieUrl)!;
             return {
               ...showtime,
               movie: {
                 ...showtime.movie,
-                imageUrl: imageUrlMap.get(movieUrl)
+                imageUrl: showtime.movie.imageUrl ?? details.imageUrl,
+                directors: showtime.movie.directors ?? details.directors,
+                actors: showtime.movie.actors ?? details.actors,
+                runtime: showtime.movie.runtime ?? details.runtime,
+                description: showtime.movie.description ?? details.description,
+                releaseYear: showtime.movie.releaseYear ?? details.releaseYear,
               }
             };
           }
