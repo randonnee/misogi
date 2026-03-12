@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://seattleindie.club/sitemap.xml

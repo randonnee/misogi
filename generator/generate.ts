@@ -13,7 +13,8 @@ import {
   generateTheaterFilters,
   generateCalendar,
   generateMovieGrid,
-  generateTheatersAbout
+  generateTheatersAbout,
+  generateStructuredData
 } from "./html_generators"
 import { cleanupUnusedImages } from "../scrapers/network/scrape-client"
 import { NOW_PLAYING_DAYS } from "../config"
@@ -59,7 +60,25 @@ async function generateSite(showtimes: Showtime[]): Promise<void> {
   // Generate about view content
   generateTheatersAbout($)
 
+  // Generate rich structured data (JSON-LD) for SEO
+  generateStructuredData($, sortedShowtimes)
+
   await Bun.write(OUTPUT_PATH, $.html())
+}
+
+async function generateSitemap(): Promise<void> {
+  const today = new Date().toISOString().split('T')[0]
+  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://seattleindie.club/</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>`
+  await Bun.write(join(OUTPUT_DIR, "sitemap.xml"), sitemap)
+  console.log("Generated sitemap.xml")
 }
 
 async function copyStaticAssets(): Promise<void> {
@@ -96,6 +115,9 @@ async function main(): Promise<void> {
 
   // Copy static assets (CSS, JS, favicon, etc.) to output directory
   await copyStaticAssets()
+
+  // Generate sitemap.xml
+  await generateSitemap()
 
   // Clean up unused images from the cache
   await cleanupUnusedImages()
