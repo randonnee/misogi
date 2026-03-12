@@ -324,7 +324,7 @@ main {
   justify-content: space-between;
   gap: 0.5rem;
   border-bottom: 2px solid var(--border);
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 1rem;
 }
 
 .movie-card-title {
