@@ -69,8 +69,17 @@ export const OUT_IMAGES_DIR = "out/images";
 
 /**
  * Gets the full path to an output image file for a given URL.
+ * Output images are always WebP format, so the extension is replaced.
  * Strips query parameters since they're not meaningful for image caching.
  */
 export function getOutImageFilePath(url: string): string {
-  return `${OUT_IMAGES_DIR}/${imageUrlToFilename(url)}`;
+  return `${OUT_IMAGES_DIR}/${outImageFilename(url)}`;
+}
+
+/**
+ * Converts a source image URL to the output filename (always .webp).
+ */
+export function outImageFilename(url: string): string {
+  const original = imageUrlToFilename(url);
+  return original.replace(/\.[a-zA-Z0-9]+$/, ".webp");
 }

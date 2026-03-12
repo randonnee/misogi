@@ -2,7 +2,7 @@ import type * as cheerio from 'cheerio'
 import type { Showtime } from "../scrapers/models/showtime"
 import type { Theater } from "../scrapers/models/theater"
 import { ALL_THEATERS } from "../scrapers/theaters/theaters"
-import { imageUrlToFilename } from "../scrapers/mocks/mock-utils"
+import { outImageFilename } from "../scrapers/mocks/mock-utils"
 import {
   groupDayShowtimesByMovieTheater,
   groupShowtimesByMovie,
@@ -114,7 +114,7 @@ function generateMovieCardHtml(movieGroup: MovieGroup): string {
     .join('')
 
   const movieImageHtml = movie.imageUrl
-    ? `<img class="movie-poster" src="images/${imageUrlToFilename(movie.imageUrl)}" alt="${movie.title}">`
+    ? `<img class="movie-poster" src="images/${outImageFilename(movie.imageUrl)}" alt="${movie.title}">`
     : ''
 
   return `

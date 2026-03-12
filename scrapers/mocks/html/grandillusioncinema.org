@@ -129,95 +129,97 @@ fbq('init', '685992590327883', {}, {
 </div><h2 class="section-title">Now Playing</h2><div class="film-cards film-cards--now-playing">      <div class="film-card now-playing">
         
         <h2 class="film-card--title">
-          <a class="film-title" href="https://grandillusioncinema.org/film/blknws-terms-and-conditions/">BLKNWS: Terms &amp; Conditions</a>
+          <a class="film-title" href="https://grandillusioncinema.org/film/the-ugly-stepsister-in-35mm/">The Ugly Stepsister in 35mm</a>
         </h2>
 
         <div class="film-card--film-info">
 
                     
                       <div>
-              Kahlil Joseph · 2025            </div>
+              Emilie Blichfeldt · 2025            </div>
           
                     
                       <div>
-              113min · DCP            </div>
+              109min · 35mm            </div>
           
         </div>
 
         <div class="film-card--sidebar">
 
           <div class="film-card--poster">
-            <a class="film-title" href="https://grandillusioncinema.org/film/blknws-terms-and-conditions/">
-              <img width="1250" height="1848" src="https://grandillusioncinema.org/wp-content/uploads/2026/01/blknws_theatrical_poster.png_[copy]_copy.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/01/blknws_theatrical_poster.png_[copy]_copy.png 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/01/blknws_theatrical_poster.png_[copy]_copy-203x300.png 203w, https://grandillusioncinema.org/wp-content/uploads/2026/01/blknws_theatrical_poster.png_[copy]_copy-693x1024.png 693w, https://grandillusioncinema.org/wp-content/uploads/2026/01/blknws_theatrical_poster.png_[copy]_copy-768x1135.png 768w, https://grandillusioncinema.org/wp-content/uploads/2026/01/blknws_theatrical_poster.png_[copy]_copy-1039x1536.png 1039w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
+            <a class="film-title" href="https://grandillusioncinema.org/film/the-ugly-stepsister-in-35mm/">
+              <img width="1250" height="1833" src="https://grandillusioncinema.org/wp-content/uploads/2026/02/the_ugly_stepsister_-_poster.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/02/the_ugly_stepsister_-_poster.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/02/the_ugly_stepsister_-_poster-205x300.jpg 205w, https://grandillusioncinema.org/wp-content/uploads/2026/02/the_ugly_stepsister_-_poster-698x1024.jpg 698w, https://grandillusioncinema.org/wp-content/uploads/2026/02/the_ugly_stepsister_-_poster-768x1126.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/02/the_ugly_stepsister_-_poster-1047x1536.jpg 1047w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
           </div>
 
           <div class="film-card--links">
                                         <div class="film-card--trailer">
-                <a class="film-button" href="https://youtu.be/bfSphlAyHLs" target="_blank"><span>View </span>Trailer</a>
+                <a class="film-button" href="https://youtu.be/5vZ1_Yxjwzs" target="_blank"><span>View </span>Trailer</a>
               </div>
             
                           <div class="film-card--buy-tickets">
-                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=588622~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
+                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=599416~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
               </div>
             
                       </div>
         </div>
 
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening present">Saturday, Jan 31, 2026, 7:15pm</li><li class="screening future">Sunday, Feb 1, 2026, 1:30pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
-</div></div></div><div class="film-card--description"><p>Adapted from Kahlil Joseph’s renowned video art installation, BLKNWS: TERMS & CONDITIONS is a distinctive cinematic experience that mirrors the sonic textures  of a record album, weaving fiction and history in an immersive journey where the fictionalized figures of W. E. B. Du Bois and Marcus Garvey join artists, musicians, Joseph’s family, and even Twitter chats, in a vision for Black consciousness.</p>
-<p>Named one of the ten best movies of 2025 by Robert Daniels of <em>RogerEbert.com</em> and Manohla Dargis of <em>The New York Times</em>.</p>
-<p>&#8220;&#8230;intricate, rich, and supremely ambitious.&#8221; Aisha Harris, <em>NPR</em></p>
-<p><strong>Critic&#8217;s Pick! </strong>&#8220;Cinema needs more filmmakers like Joseph and his collaborators, artists making truly original work that emerges from a self-aware yet playful artistic vision.&#8221; Beandrea July, <em>IndieWire</em></p>
-<p>&#8220;This is a challenging, dense, and all-encompassing picture that works best when it’s allowed to wash over you. What is left on the shore after the tide of <em>BLKNWS: Terms &amp; Conditions</em> recedes is imperative and also reliant on the idiosyncrasies of the viewer, leaving much to comb through before the next necessary watch.&#8221; Robert Daniels, <em>RogerEbert.com</em></p>
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening present">Wednesday, Mar 11, 2026, 7:15pm</li><li class="screening future">Thursday, Mar 12, 2026, 7:15pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
+</div></div></div><div class="film-card--description"><p>One of the very best horror movies of 2025 and a wicked (and well-deserved) Academy Award nominee for Best Makeup and Hairstyling at this year's Oscars. Presented in glorious 35mm!</p>
+<p>A sinister twist on the classic Cinderella story, writer/director Emilie Blichfeldt's THE UGLY STEPSISTER follows Elvira as she prepares to earn the prince's affection at any cost. In a kingdom where beauty is a brutal business, Elvira will compete with the beautiful and enchanting Agnes to become the belle of the ball.</p>
+<p>In Norwegian with English subtitles.</p>
+<p>&#8220;One of the best horror films of the decade so far.&#8221; Drew Gregory, <em>Autostraddle</em></p>
+<p><strong>Critic&#8217;s Pick! </strong>&#8220;Slyly funny and visually captivating, its scenes move with ease from gross to gorgeous, and from grotesque to magical.&#8221; Jeannette Catsoulis, <em>The New York Times</em></p>
 </div>
       </div>
 
           <div class="film-card now-playing">
         
         <h2 class="film-card--title">
-          <a class="film-title" href="https://grandillusioncinema.org/film/obex/">OBEX</a>
+          <a class="film-title" href="https://grandillusioncinema.org/film/redux-redux/">Redux Redux</a>
         </h2>
 
         <div class="film-card--film-info">
 
                     
                       <div>
-              Albert Birney · 2026            </div>
+              Kevin McManus, Matthew McManus · 2026            </div>
           
                     
                       <div>
-              91min            </div>
+              109min · DCP            </div>
           
         </div>
 
         <div class="film-card--sidebar">
 
           <div class="film-card--poster">
-            <a class="film-title" href="https://grandillusioncinema.org/film/obex/">
-              <img width="1250" height="1851" src="https://grandillusioncinema.org/wp-content/uploads/2025/12/obex_keyart_web5000.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2025/12/obex_keyart_web5000.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2025/12/obex_keyart_web5000-203x300.jpg 203w, https://grandillusioncinema.org/wp-content/uploads/2025/12/obex_keyart_web5000-692x1024.jpg 692w, https://grandillusioncinema.org/wp-content/uploads/2025/12/obex_keyart_web5000-768x1137.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2025/12/obex_keyart_web5000-1037x1536.jpg 1037w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
+            <a class="film-title" href="https://grandillusioncinema.org/film/redux-redux/">
+              <img width="1250" height="1875" src="https://grandillusioncinema.org/wp-content/uploads/2026/02/reduxreduxposter.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/02/reduxreduxposter.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/02/reduxreduxposter-200x300.jpg 200w, https://grandillusioncinema.org/wp-content/uploads/2026/02/reduxreduxposter-683x1024.jpg 683w, https://grandillusioncinema.org/wp-content/uploads/2026/02/reduxreduxposter-768x1152.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/02/reduxreduxposter-1024x1536.jpg 1024w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
           </div>
 
           <div class="film-card--links">
                                         <div class="film-card--trailer">
-                <a class="film-button" href="https://youtu.be/sTzpC2tpO7I" target="_blank"><span>View </span>Trailer</a>
+                <a class="film-button" href="https://youtu.be/Y3p8pt8Q52s" target="_blank"><span>View </span>Trailer</a>
               </div>
             
                           <div class="film-card--buy-tickets">
-                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=585223~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
+                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=602185~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
               </div>
             
                       </div>
         </div>
 
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Sunday, Feb 1, 2026, 4:30pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
-</div></div></div><div class="film-card--description"><p>The new movie from Albert Birney, co-writer and director of STRAWBERRY MANSION, OBEX is an audacious, uncanny, and delightfully skewed lo-fi fantasy. Shot in striking black and white, this surreally nostalgic nightmare revisits the dawn of personal computing to reflect on the loneliness of our always-online present day.</p>
-<p>In pre-internet 1987, Conor and his dog Sandy live a life of seclusion, lost in the slow-rendering graphics of early Macs and televisions aglow with late-night horror movie marathons. But when he begins playing OBEX, a new and mysterious, state-of-the-art computer game, he finds himself trapped in a low-tech, but high-stakes analog hellscape as the line between reality and game blurs.</p>
-<p>&#8220;A warm yearn for simpler times, told by a distinctive cinematic voice.&#8221; Ryan Lattanzio, <em>IndieWire</em></p>
-<p>&#8220;OBEX is the kind of powerfully subconscious film that works on you after you’ve finished watching it, flooding back to your mind when you hear cicadas, while you stare at a blank television or if you’re simply standing in line at the grocery store.&#8221; Robert Daniels, <em>RogerEbert.com</em></p>
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Tuesday, Mar 17, 2026, 7:15pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
+</div></div></div><div class="film-card--description"><p>Irene Kelly (Michaela McManus) travels through parallel universes, repeatedly killing her daughter's murderer. As she becomes consumed by vengeance, her humanity hangs in the balance.</p>
+<p>Written and directed by brothers Kevin and Matthew McManus and starring their sister Michaela, REDUX REDUX is a captivating sci-fi thriller that bleeds indie spirit and ingenuity.</p>
+<p>&#8220;Slickly directed and cleverly told, <em>Redux Redux</em> makes for a dread-soaked and pleasantly unpredictable surprise of an indie sci-fi thriller.&#8221; Meagan Navarro, <em>Bloody Disgusting</em></p>
+<p>&#8220;&#8230;takes elements of the serial killer genre, aspects of grief drama, and a splash of multiverse storytelling and mixes them into something that feels fresh and new&#8230; It’s smart, terrifying, and the best indie genre film I saw at SXSW this year.&#8221; Brian Tallerico, <em>RogerEbert.com</em></p>
 </div>
       </div>
 
-          <div class="film-card now-playing">
+    </div>
+
+<h2 class="section-title">Coming Soon</h2><div class="film-cards film-cards--coming_soon">      <div class="film-card coming_soon">
         
         <h2 class="film-card--title">
           <a class="film-title" href="https://grandillusioncinema.org/film/the-chronology-of-water/">The Chronology of Water</a>
@@ -254,26 +256,299 @@ fbq('init', '685992590327883', {}, {
                       </div>
         </div>
 
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening past">Friday, Jan 30, 2026, 7:00pm</li><li class="screening future">Sunday, Feb 1, 2026, 7:00pm</li><li class="screening future">Thursday, Feb 12, 2026, 7:00pm</li><li class="screening future">Wednesday, Feb 18, 2026, 7:00pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
-</div></div></div><div class="film-card--description"><p>Kristen Stewart's feature-length directorial debut, shot in glorious 16mm.</p>
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening past">Friday, Jan 30, 2026, 7:00pm</li><li class="screening past">Sunday, Feb 1, 2026, 7:00pm</li><li class="screening past">Thursday, Feb 12, 2026, 7:00pm</li><li class="screening past">Wednesday, Feb 18, 2026, 7:00pm</li><li class="screening past">Sunday, Feb 22, 2026, 7:45pm</li><li class="screening future">Wednesday, Mar 18, 2026, 7:00pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Cinema Uptown – 511 Queen Anne Ave N, Seattle</p>
+</div></div></div><div class="film-card--description"><p>FINAL SHOWING March 18th at SIFF Uptown (venue changed from SIFF Film Center due to popular demand). Author Lidia Yuknavitch scheduled to join for an in-person introduction and Q&A!</p>
+<p>Kristen Stewart's feature-length directorial debut, shot in glorious 16mm.</p>
 <p>Based on the beloved memoir by Lidia Yuknavitch, THE CHRONOLOGY OF WATER is a raw and unflinching portrait of survival, sexuality, and self-invention. The film traces Lidia’s life from her earliest memories in the Pacific Northwest, as a promising swimmer, through fractured relationships, near-motherhood, addiction, and encounters with artistic heroes. Told as a fluid memory wash, the story transforms trauma into art, embodying Yuknavitch’s defiant voice that made her work a modern cult classic. It is not only a chronicle of a woman becoming a writer, but a visceral journey through the wreckage and resilience of a life lived against the grain.</p>
-<p><strong>February 12th and 18th showings added due to popular demand!</strong></p>
 <p>&#8220;Kristen Stewart reveals a deft directorial hand and a distinct, languid, echoing style in her vividly made, emotionally visceral exploration of the life and times of American novelist Lidia Yuknavitch.&#8221; Christina Newland, <em>Time Out</em></p>
 <p><strong>4/4 stars! </strong>&#8220;In partnership with Imogen Poots, who gives an astonishing performance as Lidia, Stewart boldly evokes the source material. There’s a collage aspect to the image placement, but Stewart is not afraid to be direct. This project has been years in the making. Stewart adapted the material, and you can feel her love for it.&#8221; Sheila O&#8217;Malley, <em>RogerEbert.com</em></p>
 </div>
       </div>
 
-          <div class="film-card now-playing">
+          <div class="film-card coming_soon">
         
         <h2 class="film-card--title">
-          <a class="film-title" href="https://grandillusioncinema.org/film/truck-turner-in-35mm/">Truck Turner in 35mm</a>
+          <a class="film-title" href="https://grandillusioncinema.org/film/girl-internet-show-a-kati-kelli-mixtape/">Girl Internet Show: A Kati Kelli Mixtape</a>
         </h2>
 
         <div class="film-card--film-info">
 
                     
                       <div>
-              Jonathan Kaplan · 1974            </div>
+              Kati Kelli · 2023            </div>
+          
+                    
+                      <div>
+              79min · DCP            </div>
+          
+        </div>
+
+        <div class="film-card--sidebar">
+
+          <div class="film-card--poster">
+            <a class="film-title" href="https://grandillusioncinema.org/film/girl-internet-show-a-kati-kelli-mixtape/">
+              <img width="780" height="1169" src="https://grandillusioncinema.org/wp-content/uploads/2026/02/girl_internet_show_a_kati_kelli_mixtape_tmdb-aq13p7atm0atoz6hc6z3sye0laf.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/02/girl_internet_show_a_kati_kelli_mixtape_tmdb-aq13p7atm0atoz6hc6z3sye0laf.jpg 780w, https://grandillusioncinema.org/wp-content/uploads/2026/02/girl_internet_show_a_kati_kelli_mixtape_tmdb-aq13p7atm0atoz6hc6z3sye0laf-200x300.jpg 200w, https://grandillusioncinema.org/wp-content/uploads/2026/02/girl_internet_show_a_kati_kelli_mixtape_tmdb-aq13p7atm0atoz6hc6z3sye0laf-683x1024.jpg 683w, https://grandillusioncinema.org/wp-content/uploads/2026/02/girl_internet_show_a_kati_kelli_mixtape_tmdb-aq13p7atm0atoz6hc6z3sye0laf-768x1151.jpg 768w" sizes="auto, (max-width: 780px) 100vw, 780px" />            </a>
+          </div>
+
+          <div class="film-card--links">
+                                        <div class="film-card--trailer">
+                <a class="film-button" href="https://youtu.be/QffhNLL9ZPw" target="_blank"><span>View </span>Trailer</a>
+              </div>
+            
+                          <div class="film-card--buy-tickets">
+                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=604188~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
+              </div>
+            
+                      </div>
+        </div>
+
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Monday, Mar 23, 2026, 7:30pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location: </strong>Northwest Film Forum – 1515 12th Ave, Seattle</p>
+</div></div></div><div class="film-card--description"><p>This feature-length “mixtape” unearths and reintroduces a stunning, singular body of work by the enigmatic Kati Kelli, an outsider video artist and digital native whose subversive online uploads push at the seams of the digital form. Curated by Jane Schoenbrun (writer/director of WE'RE ALL GOING TO THE WORLD'S FAIR and I SAW THE TV GLOW) and Kati's widower, Jordan Wippell.</p>
+<p>For nearly a decade before her passing in 2019, Kati ran “Girl Internet Show,” a YouTube channel, parasocial experiment, and epically deranged one-woman universe built from scratch in her bedroom. This presentation features a lovingly curated selection of Kati’s online work, unreleased videos, and her first (and final) short film opus, "Total Body Removal Surgery".</p>
+<p>&#8220;&#8230;a surreal, fun, and disorienting 79 minutes.&#8221; Siddhant Adlakha, <em>Mashable</em></p>
+<p>&#8220;&#8230;some of this decade’s funniest, most cutting, and truly most bizarre works of art.&#8221; <em>GQ Magazine</em></p>
+<p>&#8220;&#8230;one of the strangest, funniest, and [most] heartbreaking viewing experiences I have ever had&#8230; practically perfect in every way.&#8221; Tori Potenza, <em>Movie Jawn</em></p>
+</div>
+      </div>
+
+          <div class="film-card coming_soon">
+        
+        <h2 class="film-card--title">
+          <a class="film-title" href="https://grandillusioncinema.org/film/forbidden-fruits/">Forbidden Fruits</a>
+        </h2>
+
+        <div class="film-card--film-info">
+
+                    
+                      <div>
+              Meredith Alloway · 2026            </div>
+          
+                    
+                      <div>
+              108min · DCP            </div>
+          
+        </div>
+
+        <div class="film-card--sidebar">
+
+          <div class="film-card--poster">
+            <a class="film-title" href="https://grandillusioncinema.org/film/forbidden-fruits/">
+              <img width="1250" height="1851" src="https://grandillusioncinema.org/wp-content/uploads/2026/03/forbiddenfruitsweb.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/03/forbiddenfruitsweb.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/03/forbiddenfruitsweb-203x300.jpg 203w, https://grandillusioncinema.org/wp-content/uploads/2026/03/forbiddenfruitsweb-692x1024.jpg 692w, https://grandillusioncinema.org/wp-content/uploads/2026/03/forbiddenfruitsweb-768x1137.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/03/forbiddenfruitsweb-1037x1536.jpg 1037w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
+          </div>
+
+          <div class="film-card--links">
+                                        <div class="film-card--trailer">
+                <a class="film-button" href="https://youtu.be/0nyUCq9k7_0" target="_blank"><span>View </span>Trailer</a>
+              </div>
+            
+                          <div class="film-card--buy-tickets">
+                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=606983~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
+              </div>
+            
+                      </div>
+        </div>
+
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Wednesday, Mar 25, 2026, 7:15pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
+</div></div></div><div class="film-card--description"><p>An early access screening, featuring exclusive bonus content, of the new horror/comedy from director/co-writer Meredith Alloway and producer Diablo Cody.</p>
+<p>Free Eden employee Apple (Lilli Reinhart) secretly runs a witchy femme cult in the basement of the mall store after hours – with fellow fruits Cherry (Victoria Pedretti) and Fig (Alexandra Shipp). But, when new hire Pumpkin (Lola Tung) challenges their performative sisterhood, the women are forced to face their own poisons or succumb to a bloody fate.</p>
+<p>Official selection SXSW 2026 (World Premiere)</p>
+</div>
+      </div>
+
+          <div class="film-card coming_soon">
+        
+        <h2 class="film-card--title">
+          <a class="film-title" href="https://grandillusioncinema.org/film/a-i-artificial-intelligence-in-35mm/">A.I. Artificial Intelligence in 35mm</a>
+        </h2>
+
+        <div class="film-card--film-info">
+
+                    
+                      <div>
+              Steven Spielberg · 2001            </div>
+          
+                    
+                      <div>
+              146min · 35mm            </div>
+          
+        </div>
+
+        <div class="film-card--sidebar">
+
+          <div class="film-card--poster">
+            <a class="film-title" href="https://grandillusioncinema.org/film/a-i-artificial-intelligence-in-35mm/">
+              <img width="1000" height="1500" src="https://grandillusioncinema.org/wp-content/uploads/2026/03/aiposter.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/03/aiposter.jpg 1000w, https://grandillusioncinema.org/wp-content/uploads/2026/03/aiposter-200x300.jpg 200w, https://grandillusioncinema.org/wp-content/uploads/2026/03/aiposter-683x1024.jpg 683w, https://grandillusioncinema.org/wp-content/uploads/2026/03/aiposter-768x1152.jpg 768w" sizes="auto, (max-width: 1000px) 100vw, 1000px" />            </a>
+          </div>
+
+          <div class="film-card--links">
+                                        <div class="film-card--trailer">
+                <a class="film-button" href="https://youtu.be/vzviK8IibAY" target="_blank"><span>View </span>Trailer</a>
+              </div>
+            
+                          <div class="film-card--buy-tickets">
+                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=605918~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
+              </div>
+            
+                      </div>
+        </div>
+
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Thursday, Mar 26, 2026, 7:00pm</li><li class="screening future">Sunday, Mar 29, 2026, 3:30pm</li><li class="screening future">Sunday, Mar 29, 2026, 7:00pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
+</div></div></div><div class="film-card--description"><p>25th anniversary of Steven Spielberg's monumental production of Stanley Kubrick's unrealized science fiction dream project; a bold, humanistic vision that pays tribute to Kubrick’s aesthetic while also remaining a quintessential Spielberg film.</p>
+<p>This high-tech Pinocchio story—about a robot child (Haley Joel Osment) on a quest to become a real boy after being abandoned by his adopted parents—is one of Spielberg’s most challenging and visually astonishing films, featuring one unforgettable sight after another, and an ending that will forever lodge in your memory drive.</p>
+<p>&#8220;Deeply thoughtful and thoroughly fascinating.&#8221; Todd McCarthy, <em>Variety</em></p>
+<p>&#8220;One of the most poetic and haunting allegories about the cinema that I can think of&#8230; It’s also the most philosophical film in Kubrick’s canon, the most intelligent in Spielberg’s.&#8221; Jonathan Rosenbaum, <em>Chicago Reader</em></p>
+</div>
+      </div>
+
+          <div class="film-card coming_soon">
+        
+        <h2 class="film-card--title">
+          <a class="film-title" href="https://grandillusioncinema.org/film/hundreds-of-beavers-at-central-cinema/">Hundreds of Beavers</a>
+        </h2>
+
+        <div class="film-card--film-info">
+
+                    
+                      <div>
+              Mike Cheslik · 2024            </div>
+          
+                    
+                      <div>
+              108min · DCP            </div>
+          
+        </div>
+
+        <div class="film-card--sidebar">
+
+          <div class="film-card--poster">
+            <a class="film-title" href="https://grandillusioncinema.org/film/hundreds-of-beavers-at-central-cinema/">
+              <img width="1536" height="2048" src="https://grandillusioncinema.org/wp-content/uploads/2025/01/HoBCentral.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2025/01/HoBCentral.png 1536w, https://grandillusioncinema.org/wp-content/uploads/2025/01/HoBCentral-225x300.png 225w, https://grandillusioncinema.org/wp-content/uploads/2025/01/HoBCentral-768x1024.png 768w, https://grandillusioncinema.org/wp-content/uploads/2025/01/HoBCentral-1152x1536.png 1152w" sizes="auto, (max-width: 1536px) 100vw, 1536px" />            </a>
+          </div>
+
+          <div class="film-card--links">
+                                        <div class="film-card--trailer">
+                <a class="film-button" href="https://youtu.be/Dm5XHpQZvek?si=ExLMdcR7L_k7zbmq" target="_blank"><span>View </span>Trailer</a>
+              </div>
+            
+                          <div class="film-card--buy-tickets">
+                <a class="film-button" href="https://central-cinema.com/movie/hundreds-of-beavers?date=2026-03-26#/movie/hundreds-of-beavers" target="_blank"><span>Buy </span>Tickets</a>
+              </div>
+            
+                      </div>
+        </div>
+
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening past">Thursday, Jan 29, 2026, 8:00pm</li><li class="screening past">Thursday, Feb 26, 2026, 8:00pm</li><li class="screening future">Thursday, Mar 26, 2026, 8:00pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> Central Cinema – 1411 21st Ave, Seattle</p>
+</div></div></div><div class="film-card--description"><p>Twenty-fifth encore screening! The Beavers are bringing the March Madness!</p>
+<p>Our friends at Central Cinema are generously helping us keep the beavers gnawing away while we search for a new home. 60% of ticket sales go to our relocation fund! This month marks two years since we first unleashed the Beavers on Seattle!</p>
+<p>In this 19th century, supernatural winter epic, a drunken applejack salesman must go from zero to hero and become North America’s greatest fur trapper by defeating hundreds of beavers.</p>
+<p>“Starts strange, gets stranger, and yet remains resolutely adorable… embraces the defiant glee of art cinema and distills it into something so thoroughly pure and sincere that it is surely hard not to fall in love with it.” Alexandra Heller-Nicholas, <em>Alliance of Women Film Journalists</em></p>
+<p>“It’s sure to develop a significant cult following with its unique mix of silent-era slapstick, animation elements, theme-park-style critter costumes, and general air of inspired absurdity.” Dennis Harvey, <em>Variety</em></p>
+<p>“Steroidally swollen with gags and smarts.” Guy Maddin</p>
+</div>
+      </div>
+
+          <div class="film-card coming_soon">
+        
+        <h2 class="film-card--title">
+          <a class="film-title" href="https://grandillusioncinema.org/film/kin-dza-dza/">Kin-dza-dza!</a>
+        </h2>
+
+        <div class="film-card--film-info">
+
+                    
+                      <div>
+              Georgiy Daneliya · 1986            </div>
+          
+                    
+                      <div>
+              135min · DCP            </div>
+          
+        </div>
+
+        <div class="film-card--sidebar">
+
+          <div class="film-card--poster">
+            <a class="film-title" href="https://grandillusioncinema.org/film/kin-dza-dza/">
+              <img width="1000" height="1500" src="https://grandillusioncinema.org/wp-content/uploads/2026/03/kin-dza-dza_poster.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/03/kin-dza-dza_poster.jpg 1000w, https://grandillusioncinema.org/wp-content/uploads/2026/03/kin-dza-dza_poster-200x300.jpg 200w, https://grandillusioncinema.org/wp-content/uploads/2026/03/kin-dza-dza_poster-683x1024.jpg 683w, https://grandillusioncinema.org/wp-content/uploads/2026/03/kin-dza-dza_poster-768x1152.jpg 768w" sizes="auto, (max-width: 1000px) 100vw, 1000px" />            </a>
+          </div>
+
+          <div class="film-card--links">
+                                        <div class="film-card--trailer">
+                <a class="film-button" href="https://youtu.be/cjgucYgWIoQ" target="_blank"><span>View </span>Trailer</a>
+              </div>
+            
+                          <div class="film-card--buy-tickets">
+                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=605652~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
+              </div>
+            
+                      </div>
+        </div>
+
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Monday, Mar 30, 2026, 7:00pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle(located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
+</div></div></div><div class="film-card--description"><p>In honor of the Grand Illusion's 22nd anniversary as a volunteer-operated non-profit, we're screening a movie that is very much our bag: the wonderfully weird cult classic, KIN-DZA-DZA!, beautifully restored by Mosfilm and distributed by the fine folks at Deaf Crocodile. Imagine Andrei Tarkovsky circa SOLARIS directing Douglas Adams’s The Hitchhiker’s Guide to the Galaxy and you’ll come close to the existential strangeness of this delightfully loopy Soviet-era sci-fi comedy, this year celebrating its 40th anniversary.</p>
+<p>Two average Muscovites – a plainspoken construction foreman (Stanislav Lyubshin) and a Georgian violin student (Levan Gabriadze) – encounter an odd man on the street who asks, “Tell me the number of your planet in the Tentura?” In a flash, they’re teleported across the universe to the planet Pluke in the <span class="il">Kin</span>&#8211;<span class="il">Dza</span>&#8211;<span class="il">Dza</span> galaxy – a Tatooine-like desert world whose inhabitants are hilariously noncommunicative (their main words are “ku” for good and “kyu” for very bad) and where common wooden matches are tremendously valuable.</p>
+<p>A deadpan, absurdist mixture of Kurt Vonnegut, Monty Python, Samuel Beckett, and Jodorowsky’s never-made DUNE, where alien cultures are even more haphazard and WTF than our own; the film is also a savage satire of bureaucratic idiocy and dysfunction no matter what political system you’re living under – or what planet you’re living on.</p>
+<p>In Russian with English subtitles.</p>
+<p>“…possibly the most underrated science fiction film of the past <span class="numbers">50</span> years.” Joel Blackledge, <em>Little White Lies</em></p>
+<p>“Bittersweet satire posing as postapocalyptic science fiction, Georgiy Daneliya’s <em>Kin-dza-dza!</em> has as much to say about today as it does the last gasps of the Soviet Union.” Budd Wilkins, <em>Slant</em></p>
+</div>
+      </div>
+
+          <div class="film-card coming_soon">
+        
+        <h2 class="film-card--title">
+          <a class="film-title" href="https://grandillusioncinema.org/film/mars/">Mars</a>
+        </h2>
+
+        <div class="film-card--film-info">
+
+                    
+                      <div>
+              Sevan Najarian · 2024            </div>
+          
+                    
+                      <div>
+              84min · DCP            </div>
+          
+        </div>
+
+        <div class="film-card--sidebar">
+
+          <div class="film-card--poster">
+            <a class="film-title" href="https://grandillusioncinema.org/film/mars/">
+              <img width="1250" height="1851" src="https://grandillusioncinema.org/wp-content/uploads/2026/03/mars_creditblock_4050x6000.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/03/mars_creditblock_4050x6000.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/03/mars_creditblock_4050x6000-203x300.jpg 203w, https://grandillusioncinema.org/wp-content/uploads/2026/03/mars_creditblock_4050x6000-692x1024.jpg 692w, https://grandillusioncinema.org/wp-content/uploads/2026/03/mars_creditblock_4050x6000-768x1137.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/03/mars_creditblock_4050x6000-1037x1536.jpg 1037w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
+          </div>
+
+          <div class="film-card--links">
+                                        <div class="film-card--trailer">
+                <a class="film-button" href="https://youtu.be/Vs4QKiVxEgI" target="_blank"><span>View </span>Trailer</a>
+              </div>
+            
+                          <div class="film-card--buy-tickets">
+                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=605914~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
+              </div>
+            
+                      </div>
+        </div>
+
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Tuesday, Mar 31, 2026, 7:30pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location: </strong>Northwest Film Forum – 1515 12th Ave, Seattle</p>
+</div></div></div><div class="film-card--description"><p>The long-awaited animated feature from sketch comedy troupe The Whitest Kids U' Know.</p>
+<p>A zany crew of misfits blasts off to Mars, only to find they've been duped by a scheming billionaire. Chaos ensues as they face bizarre challenges and unexpected surprises on their wacky interplanetary journey. Featuring the voices of Sam Brown, Darren Trumeter, Timmy Williams, Zach Cregger (writer/director of BARBARIAN and WEAPONS), and the late Trevor Moore. Written by Cregger, Brown, and Moore.</p>
+<p>&#8220;The pacing, stakes, and dialogue, despite all of them being coated in absolute absurdity, stand on their own and delivers one of the best full-length comedic feature scripts, animated or otherwise, that I’ve seen in a very long time.&#8221; Liz Wiest, <em>Movie Jawn</em></p>
+</div>
+      </div>
+
+          <div class="film-card coming_soon">
+        
+        <h2 class="film-card--title">
+          <a class="film-title" href="https://grandillusioncinema.org/film/i-live-here-now-in-35mm/">I Live Here Now in 35mm</a>
+        </h2>
+
+        <div class="film-card--film-info">
+
+                    
+                      <div>
+              Julie Pacino · 2025            </div>
           
                     
                       <div>
@@ -284,357 +559,124 @@ fbq('init', '685992590327883', {}, {
         <div class="film-card--sidebar">
 
           <div class="film-card--poster">
-            <a class="film-title" href="https://grandillusioncinema.org/film/truck-turner-in-35mm/">
-              <img width="1250" height="1876" src="https://grandillusioncinema.org/wp-content/uploads/2026/01/iiahhcpgac3p9iugz9neslm7va4.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/01/iiahhcpgac3p9iugz9neslm7va4.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/01/iiahhcpgac3p9iugz9neslm7va4-200x300.jpg 200w, https://grandillusioncinema.org/wp-content/uploads/2026/01/iiahhcpgac3p9iugz9neslm7va4-682x1024.jpg 682w, https://grandillusioncinema.org/wp-content/uploads/2026/01/iiahhcpgac3p9iugz9neslm7va4-768x1153.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/01/iiahhcpgac3p9iugz9neslm7va4-1023x1536.jpg 1023w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
+            <a class="film-title" href="https://grandillusioncinema.org/film/i-live-here-now-in-35mm/">
+              <img width="810" height="1170" src="https://grandillusioncinema.org/wp-content/uploads/2026/03/iliveherenowposter.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/03/iliveherenowposter.jpg 810w, https://grandillusioncinema.org/wp-content/uploads/2026/03/iliveherenowposter-208x300.jpg 208w, https://grandillusioncinema.org/wp-content/uploads/2026/03/iliveherenowposter-709x1024.jpg 709w, https://grandillusioncinema.org/wp-content/uploads/2026/03/iliveherenowposter-768x1109.jpg 768w" sizes="auto, (max-width: 810px) 100vw, 810px" />            </a>
           </div>
 
           <div class="film-card--links">
                                         <div class="film-card--trailer">
-                <a class="film-button" href="https://youtu.be/0NYQAfc2Gmc" target="_blank"><span>View </span>Trailer</a>
+                <a class="film-button" href="https://youtu.be/NiJWQF5-W6Y" target="_blank"><span>View </span>Trailer</a>
               </div>
             
                           <div class="film-card--buy-tickets">
-                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=590056~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
+                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=606295~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
               </div>
             
                       </div>
         </div>
 
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Thursday, Feb 5, 2026, 7:30pm</li><li class="screening future">Monday, Feb 9, 2026, 7:30pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
-</div></div></div><div class="film-card--description"><p>Rare 35mm screenings of the Blaxploitation classic!</p>
-<p>He’s a skip tracer, the last of the bounty hunters, living on blood money and borrowed time. Isaac Hayes is Truck Turner – a football star turned bounty hunter who’s tracking a sadistic pimp on the mean streets of Los Angeles. But when a tragic accident changes all the rules, suddenly the hunter finds himself being hunted by the city’s deadliest hired killers! Truck strikes back in a series of wild car chases, shootouts, and bone-crushing fistfights, knowing that the battles can lead to only one place: an intense struggle to the death against the brutal leader of L.A.’s crime syndicate, Harvard Blue (Yaphet Kotto).</p>
-<p>Featuring an outstanding score by Hayes, a show stopping performance by Nichelle Nichols, and direction by Jonathan Kaplan (OVER THE EDGE), TRUCK TURNER is an explosive force that can’t be stopped!</p>
-<p>&#8220;One of the best of the &#8217;70s Blaxploitation films &#8230; directed with a great deal of style.&#8221; Ernest R. Dickerson, director of <em>Juice</em> and <em>Tales from the Crypt: Demon Knight</em></p>
-</div>
-      </div>
-
-    </div>
-
-<h2 class="section-title">Coming Soon</h2><div class="film-cards film-cards--coming_soon">      <div class="film-card coming_soon">
-        
-        <h2 class="film-card--title">
-          <a class="film-title" href="https://grandillusioncinema.org/film/cactus-pears/">Cactus Pears</a>
-        </h2>
-
-        <div class="film-card--film-info">
-
-                    
-                      <div>
-              Rohan Kanawade · 2025            </div>
-          
-                    
-                      <div>
-              112min · DCP            </div>
-          
-        </div>
-
-        <div class="film-card--sidebar">
-
-          <div class="film-card--poster">
-            <a class="film-title" href="https://grandillusioncinema.org/film/cactus-pears/">
-              <img width="1250" height="1805" src="https://grandillusioncinema.org/wp-content/uploads/2026/01/cactuspears_poster_27x39.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/01/cactuspears_poster_27x39.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/01/cactuspears_poster_27x39-208x300.jpg 208w, https://grandillusioncinema.org/wp-content/uploads/2026/01/cactuspears_poster_27x39-709x1024.jpg 709w, https://grandillusioncinema.org/wp-content/uploads/2026/01/cactuspears_poster_27x39-768x1109.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/01/cactuspears_poster_27x39-1064x1536.jpg 1064w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
-          </div>
-
-          <div class="film-card--links">
-                                        <div class="film-card--trailer">
-                <a class="film-button" href="https://youtu.be/JWKCVG6RsHQ" target="_blank"><span>View </span>Trailer</a>
-              </div>
-            
-                          <div class="film-card--buy-tickets">
-                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=590220~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
-              </div>
-            
-                      </div>
-        </div>
-
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Sunday, Feb 8, 2026, 12:00pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
-</div></div></div><div class="film-card--description"><p>Winner of the World Cinema Grand Jury Prize: Dramatic at the 2025 Sundance Film Festival.</p>
-<p>Anand, a 30-something city dweller compelled to spend a 10-day mourning period for his father in the rugged countryside of western India, tenderly bonds with a local farmer who is struggling to stay unmarried. As the mourning ends, forcing his return, Anand must decide the fate of his relationship born under duress.</p>
-<p>Named one of the ten best movies of 2025 by Robert Daniels of <em>RogerEbert.com</em>.</p>
-<p>In Marathi with English subtitles.</p>
-<p>&#8220;This is a gentle beauty of a film from a filmmaker who is on his way to greatness.&#8221; Randy Myers, <em>San Jose Mercury News</em></p>
-<p>&#8220;Like the titular fruit at the center of <em>Cactus Pears</em>, sweetness abounds at the core of its compassionate beauty.&#8221; Robert Daniels, <em>RogerEbert.com</em></p>
-<p>&#8220;There have been many films about queer people returning to their family homes, but few with this amount of tender specificity. There is awkwardness, there is grief — there’s also so much love.&#8221; Drew Gregory, <em>Autostraddle</em></p>
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Thursday, Apr 2, 2026, 7:30pm</li><li class="screening future">Thursday, Apr 9, 2026, 7:30pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle(located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
+</div></div></div><div class="film-card--description"><p>Shot on vibrant 35mm with striking 16mm sequences and directed by Julie Pacino in her feature debut, I LIVE HERE NOW is a haunting, dreamlike psychodrama about identity, trauma, and the fragile line between memory and madness.</p>
+<p>Struggling actress Rose (Lucy Fry) finds her life upended by unexpected news and is suddenly forced to confront a future she never thought possible, just as a major career opportunity with a top agent comes into view. Things spiral further when her casual boyfriend brings his overbearing mother (Sheryl Lee) into the fold, pushing Rose to the brink.</p>
+<p>She flees to The Crown Inn, a crumbling motel at the edge of nowhere, where time fractures and reality bends. Haunted by sleep paralysis, splintered memories, and eerie motel dwellers (including the enigmatic Lillian, played by Madeline Brewer), Rose begins to unravel. To move forward, she must confront the buried truth of her past that her body has never forgotten.</p>
+<p>“A surreal descent into hysteria makes way for a story so inherently feminine that it could birth an army.<em> I Live Here Now </em>might look lavishly pretty, but it houses a powerful message that warrants screaming from the rooftops.” Kat Hughes, <em>THN</em></p>
+<p>“…one of the most self-assured first features I’ve seen in recent memory… a film so specific yet so universal, a tale you can feel resonate in your bone marrow, shaking awake the darkest parts of yourself you’ve kept buried for years… Pacino bears her soul here and you can feel it pulsating in every gorgeous frame. If this is Pacino just getting started, I cannot wait to see what’s next.” Mary Beth McAndrews, <em>Dread Central</em></p>
 </div>
       </div>
 
           <div class="film-card coming_soon">
         
         <h2 class="film-card--title">
-          <a class="film-title" href="https://grandillusioncinema.org/film/the-opening-of-misty-beethoven/">The Opening of Misty Beethoven</a>
+          <a class="film-title" href="https://grandillusioncinema.org/film/the-killer-new-4k-restoration/">The Killer &#8211; New 4K Restoration</a>
         </h2>
 
         <div class="film-card--film-info">
 
                     
                       <div>
-              Radley Metzger (as Henry Paris) · 1976            </div>
+              John Woo · 1989            </div>
           
                     
                       <div>
-              85min · DCP            </div>
+              110min · 4K DCP            </div>
           
         </div>
 
         <div class="film-card--sidebar">
 
           <div class="film-card--poster">
-            <a class="film-title" href="https://grandillusioncinema.org/film/the-opening-of-misty-beethoven/">
-              <img width="1250" height="1874" src="https://grandillusioncinema.org/wp-content/uploads/2026/01/mistyposter.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/01/mistyposter.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/01/mistyposter-200x300.jpg 200w, https://grandillusioncinema.org/wp-content/uploads/2026/01/mistyposter-683x1024.jpg 683w, https://grandillusioncinema.org/wp-content/uploads/2026/01/mistyposter-768x1151.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/01/mistyposter-1025x1536.jpg 1025w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
+            <a class="film-title" href="https://grandillusioncinema.org/film/the-killer-new-4k-restoration/">
+              <img width="1250" height="1796" src="https://grandillusioncinema.org/wp-content/uploads/2026/02/the_killer_-_hkcc_theatrical_poster.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/02/the_killer_-_hkcc_theatrical_poster.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/02/the_killer_-_hkcc_theatrical_poster-209x300.jpg 209w, https://grandillusioncinema.org/wp-content/uploads/2026/02/the_killer_-_hkcc_theatrical_poster-713x1024.jpg 713w, https://grandillusioncinema.org/wp-content/uploads/2026/02/the_killer_-_hkcc_theatrical_poster-768x1103.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/02/the_killer_-_hkcc_theatrical_poster-1069x1536.jpg 1069w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
           </div>
 
           <div class="film-card--links">
                                         <div class="film-card--trailer">
-                <a class="film-button" href="https://youtu.be/UE7Wb-CmV0M" target="_blank"><span>View </span>Trailer</a>
+                <a class="film-button" href="https://youtu.be/CdWGsEMT15A" target="_blank"><span>View </span>Trailer</a>
               </div>
             
                           <div class="film-card--buy-tickets">
-                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=588020~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
+                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=604662~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
               </div>
             
                       </div>
         </div>
 
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Tuesday, Feb 10, 2026, 7:30pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location: </strong>Northwest Film Forum – 1515 12th Ave, Seattle</p>
-</div></div></div><div class="film-card--description"><p>50th anniversary! An erotic retelling of George Bernard Shaw’s classic play Pygmalion, acclaimed filmmaker Radley Metzger’s THE OPENING OF MISTY BEETHOVEN is widely considered to be among the greatest adult films ever made.</p>
-<p>After a chance meeting at a Parisian adult cinema, the noted sexologist Dr. Seymour Love (Jamie Gillis) sets himself the challenge of transforming trampy streetwalker Misty Beethoven (Constance Money) into the world’s greatest lover. With the help of his friend Geraldine (Jacqueline Beudant), Love devises an erotic training program with the goal of seeing Misty crowned a “Goldenrod Girl” at publisher Lawrence Layman’s next wild party.</p>
-<p>Shot in New York, Paris, and Rome and with an all-star cast that also includes Gloria Leonard, Terri Hall, and gay superstar Casey Donovan, THE OPENING OF MISTY BEETHOVEN is a timeless, hilarious sex comedy from one of the true masters of erotic cinema.</p>
-<p><span style="font-weight: 400;">Courtesy of Distribpix, the Rialto Report, and Muscle Distribution. Co-presented by <a href="https://secsfest.org/" target="_blank" rel="noopener">SECS Fest</a>!</span></p>
-<p><strong>*No one under 18 admitted*</strong></p>
-</div>
-      </div>
-
-          <div class="film-card coming_soon">
-        
-        <h2 class="film-card--title">
-          <a class="film-title" href="https://grandillusioncinema.org/film/beauty-and-the-beast-panna-a-netvor/">Beauty and the Beast (Panna a netvor)</a>
-        </h2>
-
-        <div class="film-card--film-info">
-
-                    
-                      <div>
-              Juraj Herz · 1978            </div>
-          
-                    
-                      <div>
-              91min · DCP            </div>
-          
-        </div>
-
-        <div class="film-card--sidebar">
-
-          <div class="film-card--poster">
-            <a class="film-title" href="https://grandillusioncinema.org/film/beauty-and-the-beast-panna-a-netvor/">
-              <img width="780" height="1170" src="https://grandillusioncinema.org/wp-content/uploads/2026/01/panna_a_netvor_tmdb-i2i1tgwaonfdpkqi3gnwx9lphdk.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/01/panna_a_netvor_tmdb-i2i1tgwaonfdpkqi3gnwx9lphdk.jpg 780w, https://grandillusioncinema.org/wp-content/uploads/2026/01/panna_a_netvor_tmdb-i2i1tgwaonfdpkqi3gnwx9lphdk-200x300.jpg 200w, https://grandillusioncinema.org/wp-content/uploads/2026/01/panna_a_netvor_tmdb-i2i1tgwaonfdpkqi3gnwx9lphdk-683x1024.jpg 683w, https://grandillusioncinema.org/wp-content/uploads/2026/01/panna_a_netvor_tmdb-i2i1tgwaonfdpkqi3gnwx9lphdk-768x1152.jpg 768w" sizes="auto, (max-width: 780px) 100vw, 780px" />            </a>
-          </div>
-
-          <div class="film-card--links">
-                                        <div class="film-card--trailer">
-                <a class="film-button" href="https://youtu.be/ShbMfeoBIpM" target="_blank"><span>View </span>Trailer</a>
-              </div>
-            
-                          <div class="film-card--buy-tickets">
-                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=592319~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
-              </div>
-            
-                      </div>
-        </div>
-
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Wednesday, Feb 11, 2026, 7:30pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
-</div></div></div><div class="film-card--description"><p>From the rich and textured imagination of Czech visionary Juraj Herz (THE CREMATOR) comes his own vivid reimagining of the classic fairy tale BEAUTY AND THE BEAST. The film follows the innocent Julie and her experiences living under the watchful eye of Netvor, a bird-like being torn between his growing affection for her and his animalistic urge to kill. Gorgeously shot, intriguingly surreal, thrillingly sensual - BEAUTY AND THE BEAST retells a beloved story in ways unlike any adaptation before or since.</p>
-<p>Restored by Národní filmový archiv, Prague and Severin Films, supported by The Czech Audiovisual Fund. In Czech with English subtitles.</p>
-<p>&#8220;The 1978 adaptation by the Czechoslovak film-maker Juraj Herz is both a vital addition to – and a radical departure from – the tradition of fairy tales on film.&#8221; David Melville, <em>Senses of Cinema</em></p>
-</div>
-      </div>
-
-          <div class="film-card coming_soon">
-        
-        <h2 class="film-card--title">
-          <a class="film-title" href="https://grandillusioncinema.org/film/mr-nobody-against-putin/">Mr. Nobody Against Putin</a>
-        </h2>
-
-        <div class="film-card--film-info">
-
-                    
-                      <div>
-              David Borenstein, Pavel Talankin · 2025            </div>
-          
-                    
-                      <div>
-              90min · DCP            </div>
-          
-        </div>
-
-        <div class="film-card--sidebar">
-
-          <div class="film-card--poster">
-            <a class="film-title" href="https://grandillusioncinema.org/film/mr-nobody-against-putin/">
-              <img width="1250" height="1851" src="https://grandillusioncinema.org/wp-content/uploads/2026/01/mrnobodyagainstputin_poster_kl_2025x3000_oscarnom.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/01/mrnobodyagainstputin_poster_kl_2025x3000_oscarnom.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/01/mrnobodyagainstputin_poster_kl_2025x3000_oscarnom-203x300.jpg 203w, https://grandillusioncinema.org/wp-content/uploads/2026/01/mrnobodyagainstputin_poster_kl_2025x3000_oscarnom-692x1024.jpg 692w, https://grandillusioncinema.org/wp-content/uploads/2026/01/mrnobodyagainstputin_poster_kl_2025x3000_oscarnom-768x1137.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/01/mrnobodyagainstputin_poster_kl_2025x3000_oscarnom-1037x1536.jpg 1037w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
-          </div>
-
-          <div class="film-card--links">
-                                        <div class="film-card--trailer">
-                <a class="film-button" href="https://youtu.be/9150MCMSrgc" target="_blank"><span>View </span>Trailer</a>
-              </div>
-            
-                          <div class="film-card--buy-tickets">
-                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=594784~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
-              </div>
-            
-                      </div>
-        </div>
-
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Sunday, Feb 15, 2026, 12:30pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
-</div></div></div><div class="film-card--description"><p>Nominated for the Academy Award for Best Documentary Feature!</p>
-<p>As captivating and joyful as it is eye-opening and sobering. MR. NOBODY AGAINST PUTIN is a uniquely collaborative film that showcases rare footage revealing the profound impact of Putin’s regime on the lives of everyday Russians, particularly its children.</p>
-<p>Pasha Talankin is an unlikely hero—a beloved Russian primary school teacher, known as a mentor and prankster who offers students a safe haven in his office. After Russia invades Ukraine, Pasha’s role in the school changes dramatically as he is reluctantly drawn into Putin’s propaganda machine. Forced to promote state-sanctioned messages and horrified by the transformation of his school and community, he struggles with guilt and a sense of powerlessness, leading him to become an international whistleblower.</p>
-<p>As the school’s videographer, Pasha documents intimate and revealing footage of <span class="il">Putin</span>’s regime, capturing the rise of militarized children’s groups, repressive laws, fervent nationalism, and the recruitment of graduating students to fight in the war. When he learns his own life may be at risk, Pasha is forced to plan a dangerous escape from Russia.</p>
-<p>In Russian with English subtitles.</p>
-<p>&#8220;&#8230;a striking work of rebel cinema.&#8221; Nick Schager, <em>The Daily Beast</em></p>
-<p>&#8220;Remarkable&#8230; An exemplary work of cinematic modernism.&#8221; Richard Brody, <em>The New Yorker</em></p>
-<p><strong>Critic&#8217;s Pick!</strong> &#8220;<em>Mr. Nobody Against Putin</em> is unique in dealing with serious issues about war and dehumanization with a light, even humorous, and certainly personality-filled, touch — in the serious-as-a-heart-attack war documentary landscape, it is a unicorn. The fact that it leads to more empathy and understanding, and a capacity for seeing ordinary Russians in a more human light, makes it a profound film as well as an engaging one.&#8221; Christian Blauvelt, <em>IndieWire</em></p>
-</div>
-      </div>
-
-          <div class="film-card coming_soon">
-        
-        <h2 class="film-card--title">
-          <a class="film-title" href="https://grandillusioncinema.org/film/sound-of-falling/">Sound of Falling</a>
-        </h2>
-
-        <div class="film-card--film-info">
-
-                    
-                      <div>
-              Mascha Schilinski · 2025            </div>
-          
-                    
-                      <div>
-              149min · DCP            </div>
-          
-        </div>
-
-        <div class="film-card--sidebar">
-
-          <div class="film-card--poster">
-            <a class="film-title" href="https://grandillusioncinema.org/film/sound-of-falling/">
-              <img width="1250" height="1851" src="https://grandillusioncinema.org/wp-content/uploads/2026/01/sof_v1_os_en-us_thisjan.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/01/sof_v1_os_en-us_thisjan.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/01/sof_v1_os_en-us_thisjan-203x300.jpg 203w, https://grandillusioncinema.org/wp-content/uploads/2026/01/sof_v1_os_en-us_thisjan-692x1024.jpg 692w, https://grandillusioncinema.org/wp-content/uploads/2026/01/sof_v1_os_en-us_thisjan-768x1137.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/01/sof_v1_os_en-us_thisjan-1037x1536.jpg 1037w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
-          </div>
-
-          <div class="film-card--links">
-                                        <div class="film-card--trailer">
-                <a class="film-button" href="https://youtu.be/O-jgGbvLgVo" target="_blank"><span>View </span>Trailer</a>
-              </div>
-            
-                          <div class="film-card--buy-tickets">
-                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=594921~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
-              </div>
-            
-                      </div>
-        </div>
-
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Sunday, Feb 15, 2026, 3:00pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location:</strong> SIFF Film Center – 167 Republican St, Seattle (located within the Seattle Center, just north of Climate Pledge Arena / east of KEXP and The Vera Project)</p>
-</div></div></div><div class="film-card--description"><p>In Mascha Schilinski’s transcendent SOUND OF FALLING, fragments from a hundred years in one farmhouse coalesce into a cinematic flood of memory.</p>
-<p>Germany’s shortlisted Best International Feature Film entry to the 98th Academy Awards tracks the lives of four adolescent girls (Alma, Erika, Angelika, Lenka) across the last century – their desires and distress, their secrets and truths, their encounters with another’s gaze and defiant gaze in return. Though separated by time, far-reaching resonances emerge as echoes of experience linger.</p>
-<p>Sensual and sensory, this awe-inducing Cannes prizewinner invites audiences to witness an eternal summer, a constant now, and ask: what is looking back at us from the past – or perhaps even from the future?</p>
-<p>In German with English subtitles.</p>
-<p>Named one of the ten best films of 2025 by <em>The New Yorker</em>, <em>Variety</em>, <em>Vulture</em>, <em>Slant</em>, and more!</p>
-<p>&#8220;It’s an astonishing work, twining together the lives of four generations of families with an intricacy and intimacy that feels like an act of psychic transmission.&#8221; Alison Willmore, <em>Vulture</em></p>
-<p>&#8220;It’s been a while since I’ve seen a filmmaker wield the tools of her craft with such an ingenious and committed sense of mischief&#8230; [<em>Sound of Falling</em>] is both disorienting and enveloping; it knocks you off your feet and then sweeps you up again.&#8221; Justin Chang, <em>The New Yorker</em></p>
-</div>
-      </div>
-
-          <div class="film-card coming_soon">
-        
-        <h2 class="film-card--title">
-          <a class="film-title" href="https://grandillusioncinema.org/film/hard-boiled-new-4k-restoration/">Hard Boiled &#8211; New 4K Restoration</a>
-        </h2>
-
-        <div class="film-card--film-info">
-
-                    
-                      <div>
-              John Woo · 1992            </div>
-          
-                    
-                      <div>
-              126min · 4K DCP            </div>
-          
-        </div>
-
-        <div class="film-card--sidebar">
-
-          <div class="film-card--poster">
-            <a class="film-title" href="https://grandillusioncinema.org/film/hard-boiled-new-4k-restoration/">
-              <img width="1250" height="1828" src="https://grandillusioncinema.org/wp-content/uploads/2025/12/hardboiledposter.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2025/12/hardboiledposter.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2025/12/hardboiledposter-205x300.jpg 205w, https://grandillusioncinema.org/wp-content/uploads/2025/12/hardboiledposter-700x1024.jpg 700w, https://grandillusioncinema.org/wp-content/uploads/2025/12/hardboiledposter-768x1123.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2025/12/hardboiledposter-1050x1536.jpg 1050w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
-          </div>
-
-          <div class="film-card--links">
-                                        <div class="film-card--trailer">
-                <a class="film-button" href="https://youtu.be/fWvCK7doZqM" target="_blank"><span>View </span>Trailer</a>
-              </div>
-            
-                          <div class="film-card--buy-tickets">
-                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=581824~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
-              </div>
-            
-                      </div>
-        </div>
-
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening past">Monday, Jan 26, 2026, 7:00pm</li><li class="screening future">Tuesday, Feb 17, 2026, 7:00pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location: </strong>Northwest Film Forum – 1515 12th Ave, Seattle</p>
-</div></div></div><div class="film-card--description"><p>John Woo's long-unavailable action masterpiece, newly restored!</p>
-<p>Chow Yun-Fat stars as a cop who loses his partner in a shoot-out with gun smugglers and goes on a mission to catch them. In order to get closer to the leaders of the ring, he joins forces with an undercover agent (Tony Leung) who's working as a gangster hitman. More than a cops-and-bad-guys story, HARD BOILED continually startles with its originality and dark humor.</p>
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Monday, Apr 6, 2026, 7:00pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location: </strong>Northwest Film Forum – 1515 12th Ave, Seattle</p>
+</div></div></div><div class="film-card--description"><p>John Woo's jaw-dropping bullet ballet classic, newly restored!</p>
+<p>When an expert assassin (Chow Yun-Fat) accidentally blinds a nightclub singer (Sally Yeh), he chooses to retire after one last job to pay for his unintended victim's sight-restoring operation. But when he's double-crossed, he reluctantly joins forces with a rogue policeman (Danny Lee) to make things right.</p>
 <p>In Cantonese with English subtitles.</p>
-<p><strong>Encore screening added Tuesday, Feb 17th!</strong></p>
-<p>&#8220;Woo has elevated the action movie into the realm of art. Infinitely more exciting than a dozen <em>Die Hard</em>s, action cinema doesn&#8217;t come any better than this.&#8221; Mark Salisbury, <em>Empire Magazine</em></p>
-<p>&#8220;It&#8217;s nirvana for seekers of action, and it rarely gets any better than this.&#8221; Marc Savlov, <em>Austin Chronicle</em></p>
+<p>Special live intro from local Hong Kong genre film connoisseur and one of the programmers of the <a href="https://www.seattlefilmsociety.com/" target="_blank" rel="noopener">Seattle Film Society</a>, Patrick McFarland.</p>
+<p>&#8220;It starts over the top then blasts through the roof. It takes your breath away!&#8221; J. Hoberman, <em>Village Voice</em></p>
+<p>&#8220;&#8230;<em>The Killer</em> is John Woo at his pinnacle.&#8221; Mark Dinning, <em>Empire</em></p>
+<p>&nbsp;</p>
 </div>
       </div>
 
           <div class="film-card coming_soon">
         
         <h2 class="film-card--title">
-          <a class="film-title" href="https://grandillusioncinema.org/film/a-better-tomorrow-new-4k-restoration/">A Better Tomorrow &#8211; New 4K Restoration</a>
+          <a class="film-title" href="https://grandillusioncinema.org/film/scarlet-warning-666-new-restoration/">Scarlet Warning 666 &#8211; New Restoration</a>
         </h2>
 
         <div class="film-card--film-info">
 
                     
                       <div>
-              John Woo · 1986            </div>
+              Palmer Rockey · 1974            </div>
           
                     
                       <div>
-              95min · DCP            </div>
+              107min · DCP            </div>
           
         </div>
 
         <div class="film-card--sidebar">
 
           <div class="film-card--poster">
-            <a class="film-title" href="https://grandillusioncinema.org/film/a-better-tomorrow-new-4k-restoration/">
-              <img width="1250" height="1796" src="https://grandillusioncinema.org/wp-content/uploads/2026/01/abettertomorrowposter.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/01/abettertomorrowposter.jpg 1250w, https://grandillusioncinema.org/wp-content/uploads/2026/01/abettertomorrowposter-209x300.jpg 209w, https://grandillusioncinema.org/wp-content/uploads/2026/01/abettertomorrowposter-713x1024.jpg 713w, https://grandillusioncinema.org/wp-content/uploads/2026/01/abettertomorrowposter-768x1103.jpg 768w, https://grandillusioncinema.org/wp-content/uploads/2026/01/abettertomorrowposter-1069x1536.jpg 1069w" sizes="auto, (max-width: 1250px) 100vw, 1250px" />            </a>
+            <a class="film-title" href="https://grandillusioncinema.org/film/scarlet-warning-666-new-restoration/">
+              <img width="432" height="640" src="https://grandillusioncinema.org/wp-content/uploads/2026/03/scarlet_warning_666_one_sheet_poster.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://grandillusioncinema.org/wp-content/uploads/2026/03/scarlet_warning_666_one_sheet_poster.png 432w, https://grandillusioncinema.org/wp-content/uploads/2026/03/scarlet_warning_666_one_sheet_poster-203x300.png 203w" sizes="auto, (max-width: 432px) 100vw, 432px" />            </a>
           </div>
 
           <div class="film-card--links">
                                         <div class="film-card--trailer">
-                <a class="film-button" href="https://youtu.be/yEbvc32n7bU" target="_blank"><span>View </span>Trailer</a>
+                <a class="film-button" href="https://youtu.be/-nEGNxW-pk4" target="_blank"><span>View </span>Trailer</a>
               </div>
             
                           <div class="film-card--buy-tickets">
-                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=592615~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
+                <a class="film-button" href="https://prod5.agileticketing.net/websales/pages/info.aspx?evtinfo=606359~db6ae971-a7a0-4ce7-8336-1f487b58723c&" target="_blank"><span>Buy </span>Tickets</a>
               </div>
             
                       </div>
         </div>
 
-        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Monday, Mar 2, 2026, 7:15pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location: </strong>Northwest Film Forum – 1515 12th Ave, Seattle</p>
-</div></div></div><div class="film-card--description"><p>40th anniversary of John Woo's landmark action classic, newly restored!</p>
-<p>The film that established John Woo as the king of the Hong Kong gunplay film and made a superstar of Chow Yun-Fat!  An ex-gangster tries to reconnect with his estranged policeman brother, but he finds that his ties to gangs are harder to break than he thought.</p>
-<p>In Cantonese with English subtitles.</p>
-<p>Special live intro from local Hong Kong genre film connoisseur and one of the programmers of the <a href="https://www.seattlefilmsociety.com/" target="_blank" rel="noopener">Seattle Film Society</a>, Patrick McFarland.</p>
-<p>&#8220;The <em>Citizen Kane</em> of Hong Kong cinema.&#8221; Dave Kehr, <em>The New York Times</em></p>
+        <div class="film-card--screening-info"><div class="film-card--screenings">    <div class="screenings"><ul class="screenings-list"><li class="screening future">Monday, Apr 20, 2026, 7:15pm</li></ul>    </div></div><div class="film-card--screenings"><div class="screenings"><p><strong>Screening location: </strong>Northwest Film Forum – 1515 12th Ave, Seattle</p>
+</div></div></div><div class="film-card--description"><p>A long-lost oddity of underground cinema and a notorious fixture in outsider film lore, SCARLET WARNING 666 was lovingly restored after decades of obscurity and is celebrated (and derided) as a bewildering example of independent psychedelia and eccentric ambition.</p>
+<p>SCARLET WARNING 666 stars cult auteur Palmer Rockey in multiple roles — including twin brothers trapped in an unfathomable tale of Satanic skullduggery, bizarre occult rituals, and “demonic assassination” on a country estate. The film’s narrative logic dissolves into a collage of ritual scenes, disjointed character arcs, and surreal confrontations with the infernal, as the characters grapple with forces they barely comprehend in an increasingly chaotic rural nightmare. Palmer Rockey's vanity project defies conventional storytelling and embraces its own idiosyncratic creation mythology — alternately dismissed as “the worst movie ever made” and cherished as a cult curio.</p>
+<p>Grindhouse Releasing has painstakingly restored SCARLET WARNING 666 from the original camera negative, going beyond the limits of sanity to preserve every agonizing frame of Palmer Rockey’s cinematic tribulation.</p>
+<p>Select audience reactions/reviews from the January 2026 world premiere of the new restoration at the Texas Theatre in Dallas:</p>
+<p>“A movie for those who always wondered what Ben from <em>Blue Velvet</em> got up to in his spare time. The work of a genuinely unwell mind, possibly the ultimate Dallas-shot trashterpiece. Soundtrack unironically slaps.”</p>
+<p>&#8220;Kinda like if Neil Breen made <em>A Lizard in a Woman&#8217;s Skin</em>. The psychosis oozes off the screen at every moment.”</p>
+<p>&#8220;The product of a demented, disjointed psyche&#8230; This is TRULY one for the sickos. A masochist&#8217;s delight.&#8221;</p>
 </div>
       </div>
 

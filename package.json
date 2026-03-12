@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "cheerio": "^1.1.2",
-    "effect": "^3.19.14"
+    "effect": "^3.19.14",
+    "sharp": "^0.34.5"
   },
   "scripts": {
     "generate": "RUN_MODE=mock bun run generator/generate.ts --",

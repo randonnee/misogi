@@ -2,6 +2,7 @@ import { Effect } from "effect";
 import type { ScrapeClient } from "../network/scrape-client";
 import { getMockHtmlFilePath, getMockImageFilePath, getOutImageFilePath } from "./mock-utils";
 import { trackImageUsed } from "../network/image-cache";
+import { processImage } from "../network/image-processor";
 
 /**
  * A mock scrape client that reads HTML from the mocks/html folder.
@@ -42,12 +43,14 @@ export class MockScrapeClient implements ScrapeClient {
         const buffer = await file.arrayBuffer();
         const data = new Uint8Array(buffer);
 
-        // Always save to out/images for serving
+        // Process image (resize + convert to WebP) before saving to out/
+        const processed = await processImage(data);
+
         const outFilePath = getOutImageFilePath(url);
         trackImageUsed(outFilePath);
-        await Bun.write(outFilePath, data);
+        await Bun.write(outFilePath, processed);
 
-        return data;
+        return processed;
       },
       catch: (error): Error => {
         return error instanceof Error

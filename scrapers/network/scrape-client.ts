@@ -3,6 +3,7 @@ import { getMockHtmlFilePath, getMockImageFilePath, getOutImageFilePath } from "
 import { MockScrapeClient } from "../mocks/mock-scrape-client";
 import { RUN_MODE } from "../config/run-mode";
 import { trackImageUsed } from "./image-cache";
+import { processImage } from "./image-processor";
 
 export { cleanupUnusedImages } from "./image-cache";
 
@@ -132,13 +133,15 @@ export class ScrapeClientImpl implements ScrapeClient {
         const data = new Uint8Array(buffer);
 
         if (RUN_MODE === "update_mocks") {
+          // Save original (unprocessed) image to mocks
           await this.saveImageMock(url, data);
         }
 
-        // Always save to out/images for serving
-        await this.saveOutImage(url, data);
+        // Process image (resize + convert to WebP) before saving to out/
+        const processed = await processImage(data);
+        await this.saveOutImage(url, processed);
 
-        return data;
+        return processed;
       },
       catch: (error): Error => {
         return error instanceof Error
