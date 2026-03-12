@@ -17,6 +17,18 @@
       --background: #F8F9FA;
       --surface: #ffffff;
       --border: #e5e5e5;
+      color-scheme: light dark;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --primary-color: #e8e4df;
+        --accent-red: #F2888A;
+        --text-light: #9a958e;
+        --background: #121010;
+        --surface: #1c1917;
+        --border: #302b27;
+        color-scheme: dark;
+      }
     }
     body {
       font-family: "JetBrains Mono", monospace, -apple-system, BlinkMacSystemFont, sans-serif;

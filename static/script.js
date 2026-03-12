@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // View switching
+  // --- View switching ---
   const viewModes = document.querySelectorAll('.view-mode');
   const views = document.querySelectorAll('.view');
 

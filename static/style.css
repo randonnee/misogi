@@ -40,6 +40,25 @@ h2, h3 {
   --movie-title-font-size: 0.9rem;
   --movie-times-font-size: 0.8rem;
   --filter-item-font-size: 0.9rem;
+
+  color-scheme: light dark;
+}
+
+/* Dark theme — follows system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #e8e4df;
+    --accent-red: #F2888A;
+    --accent-green: #7FD456;
+    --accent-purple: #BFA0DC;
+    --accent-blue: #4A90E2;
+    --text-light: #9a958e;
+    --background: #121010;
+    --surface: #1c1917;
+    --border: #302b27;
+
+    color-scheme: dark;
+  }
 }
 
 body {
@@ -58,6 +77,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
+  position: relative;
 }
 
 header h1 {
@@ -320,6 +340,13 @@ main {
   height: 112px;
   object-fit: cover;
   flex-shrink: 0;
+}
+
+/* Soften poster brightness in dark mode so they don't blow out */
+@media (prefers-color-scheme: dark) {
+  .movie-poster {
+    filter: brightness(0.9) contrast(1.05);
+  }
 }
 
 .movie-theaters {
