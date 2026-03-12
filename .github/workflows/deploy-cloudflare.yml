@@ -85,27 +85,3 @@ jobs:
           directory: out
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-  deploy_worker:
-    name: Deploy Cloudflare Worker
-    needs: build
-    if: hashFiles('wrangler.toml') != ''
-    runs-on: ubuntu-latest
-    environment:
-      name: Production
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Bun
-        uses: oven-sh/setup-bun@v2
-        with:
-          bun-version: latest
-
-      - name: Install dependencies
-        run: bun install
-
-      - name: Publish Worker
-        uses: cloudflare/wrangler-action@3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
